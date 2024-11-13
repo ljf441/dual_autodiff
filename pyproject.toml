@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools", "wheel", "setuptools_scm"]  # Build requirements
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "autodiff"
+version = "0.0.1"
+description = "A Python package for automatic differentiation using dual numbers."
+readme = "README.md"
+requires-python = ">=3.6"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Laura Just Fung", email = "lj441@cam.ac.uk" }
+]
+classifiers = [
+    "Development Status :: 1 - Beta",
+    "Intended Audience :: Physicists",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Libraries"
+]
+
+# Runtime dependencies
+dependencies = [
+    "numpy"
+]
+
+[tool.setuptools_scm]
+write_to = "autodiff/version.py"  # Where to write the dynamic version
+version_scheme = "post-release"
+local_scheme = "no-local-version"
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+[project.urls]
+Homepage = "https://github.com/ljf441/autodiff"
+Issues = "https://github.com/ljf441/autodiff/issues"
