@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='autodiff',
+    name='dual_autodiff',
     version='0.0.1',
     packages=find_packages(),
     install_requires=[
@@ -12,7 +12,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'autodiff=autodiff.cli:main',
+            'dual_autodiff=dual_autodiff.cli:main',
         ]
     },
 )
