@@ -10,9 +10,4 @@ setup(
         'jupyter',
         'pytest'
     ],
-    entry_points={
-        'console_scripts': [
-            'dual_autodiff=dual_autodiff.cli:main',
-        ]
-    },
 )
