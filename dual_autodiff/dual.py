@@ -7,19 +7,6 @@ class Dual:
     Attributes:
         real (int, float): real part of dual number.
         dual (int, float): dual part of dual number.
-
-    Methods:
-        __add__(self, x): Adds two dual numbers.
-        __sub__(self, x): Subtracts two dual numbers.
-        __mul__(self, x): Multiplies two dual numbers.
-        __truediv__(self, x): Divides two dual numbers.
-        sin(self): Computes the sine of the dual number.
-        cos(self): Computes the cosine of the dual number.
-        tan(self): Computes the tangent of the dual number.
-        log(self): Computes the natural logarithm of the dual number.
-        exp(self): Computes the exponential of the dual number.
-        __pow__(self, x): Raises the dual number to the power of another dual number.
-        __repr__(self): Returns a string representation of the dual number.
     """
 
     def __init__(self, real, dual):
@@ -215,7 +202,7 @@ class Dual:
             R_dual = x.real*self.real**(x.real - 1) * x.dual + (self.real**x.real)*np.log(self.real)*x.dual
         else:
             R_real = self.real**x
-            R_dual = (x*self.real**(x - 1)) * self.dual
+            R_dual = x*self.real**(x - 1) * self.dual
         return Dual(R_real, R_dual)
     
     def __rpow__(self, x):
@@ -238,8 +225,7 @@ class Dual:
             string: formatted string representation of dual number
         """
         return f"Dual(real={self.real}, dual={self.dual})"
-
-
+    
 @staticmethod
 def cos(x):
     """

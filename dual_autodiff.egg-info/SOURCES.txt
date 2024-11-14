@@ -1,5 +1,7 @@
 LICENSE
+Makefile
 README.md
+make.bat
 pyproject.toml
 setup.py
 tutorial.ipynb
@@ -15,5 +17,6 @@ dual_autodiff.egg-info/top_level.txt
 dual_autodiff/__pycache__/__init__.cpython-312.pyc
 dual_autodiff/__pycache__/dual.cpython-312.pyc
 source/conf.py
+source/index.rst
 tests/test_dual.py
 tests/__pycache__/test_dual.cpython-312-pytest-8.3.3.pyc

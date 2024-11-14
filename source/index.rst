@@ -25,36 +25,12 @@ Dual Class
    :undoc-members:
    :show-inheritance:
 
-.. Instance Methods
-.. ================
+Instance Methods
+================
 
-.. .. automethod:: dual_autodiff.Dual.__add__
-.. .. automethod:: dual_autodiff.Dual.__sub__
-.. .. automethod:: dual_autodiff.Dual.__mul__
-.. .. automethod:: dual_autodiff.Dual.__truediv__
-.. .. automethod:: dual_autodiff.Dual.__pow__
-.. .. automethod:: dual_autodiff.Dual.__repr__
-.. .. automethod:: dual_autodiff.Dual.sin
-.. .. automethod:: dual_autodiff.Dual.cos
-.. .. automethod:: dual_autodiff.Dual.tan
-.. .. automethod:: dual_autodiff.Dual.log
-.. .. automethod:: dual_autodiff.Dual.exp
-
-.. Static Methods
-.. ==============
-
-.. .. autofunction:: dual_autodiff.Dual.cos
-.. .. autofunction:: dual_autodiff.Dual.sin
-.. .. autofunction:: dual_autodiff.Dual.tan
-.. .. autofunction:: dual_autodiff.Dual.log
-.. .. autofunction:: dual_autodiff.Dual.exp
-
-
-.. API Documentation
-.. =================
-
-.. .. toctree::
-..    :maxdepth: 2
-..    :caption: API Reference:
-
-..    dual_autodiff
+.. automethod:: dual_autodiff.Dual.__add__
+.. automethod:: dual_autodiff.Dual.__sub__
+.. automethod:: dual_autodiff.Dual.__mul__
+.. automethod:: dual_autodiff.Dual.__truediv__
+.. automethod:: dual_autodiff.Dual.__pow__
+.. automethod:: dual_autodiff.Dual.__repr__
