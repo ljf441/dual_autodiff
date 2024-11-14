@@ -1,0 +1,60 @@
+.. dual_autodiff documentation master file, created by
+   sphinx-quickstart on Wed Nov 13 23:36:28 2024.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+dual_autodiff documentation
+===========================
+
+This package implements dual numbers, which are numbers of the form a + b \epsilon where 'a' is a real number and 'b' is the dual part with the property that '\epsilon^2 = 0'.
+Dual numbers are useful for automatic differentiation and numerical analysis.
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   modules
+
+
+Dual Class
+==========
+
+.. autoclass:: dual_autodiff.Dual
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. Instance Methods
+.. ================
+
+.. .. automethod:: dual_autodiff.Dual.__add__
+.. .. automethod:: dual_autodiff.Dual.__sub__
+.. .. automethod:: dual_autodiff.Dual.__mul__
+.. .. automethod:: dual_autodiff.Dual.__truediv__
+.. .. automethod:: dual_autodiff.Dual.__pow__
+.. .. automethod:: dual_autodiff.Dual.__repr__
+.. .. automethod:: dual_autodiff.Dual.sin
+.. .. automethod:: dual_autodiff.Dual.cos
+.. .. automethod:: dual_autodiff.Dual.tan
+.. .. automethod:: dual_autodiff.Dual.log
+.. .. automethod:: dual_autodiff.Dual.exp
+
+.. Static Methods
+.. ==============
+
+.. .. autofunction:: dual_autodiff.Dual.cos
+.. .. autofunction:: dual_autodiff.Dual.sin
+.. .. autofunction:: dual_autodiff.Dual.tan
+.. .. autofunction:: dual_autodiff.Dual.log
+.. .. autofunction:: dual_autodiff.Dual.exp
+
+
+.. API Documentation
+.. =================
+
+.. .. toctree::
+..    :maxdepth: 2
+..    :caption: API Reference:
+
+..    dual_autodiff
