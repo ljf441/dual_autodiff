@@ -1,0 +1,2 @@
+include README.md
+recursive-include dual_autodiff_x *
