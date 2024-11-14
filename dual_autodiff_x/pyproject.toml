@@ -1,33 +1,18 @@
 [build-system]
-requires = ["setuptools", "wheel", "setuptools_scm", "Cython", "numpy"]  # Build requirements
+requires = ["setuptools", "wheel", "setuptools_scm", "Cython", "numpy", "cibuildwheel"]  # Build requirements
 build-backend = "setuptools.build_meta"
 
+[tool.cibuildwheel]
+archs = ["x86_64"]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[project]
+name = "dual_autodiff_x"
+version = "0.0.1"
+description = "A Python package for automatic differentiation using dual numbers."
+authors = [
+    { name = "Laura Just Fung", email = "lj441@cam.ac.uk" }
+]
+requires-python = ">=3.10, <3.12"
+dependencies = [
+    "numpy"
+]

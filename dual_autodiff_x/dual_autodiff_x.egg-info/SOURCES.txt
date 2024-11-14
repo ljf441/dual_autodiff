@@ -1,7 +1,10 @@
+MANIFEST.in
+dual.cpython-36m-x86_64-linux-gnu.so
 pyproject.toml
 setup.py
 dual_autodiff_x/__init__.py
 dual_autodiff_x/dual.c
+dual_autodiff_x/dual.cpython-36m-x86_64-linux-gnu.so
 dual_autodiff_x/dual.pyx
 dual_autodiff_x.egg-info/PKG-INFO
 dual_autodiff_x.egg-info/SOURCES.txt
