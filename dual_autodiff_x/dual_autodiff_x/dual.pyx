@@ -19,8 +19,13 @@ cdef class Dual:
             real (int, float): real part of dual number.
             dual (int, float): dual part of dual number.
         """
+        print(f"Initializing Dual with real={real}, dual={dual}")
         self.real = real
         self.dual = dual
+
+    def __getattr(self, name):
+        print(f"Acessing attribute: {name}")
+        return super().__getattr__(name)
 
     def __add__(self, x):
         """
