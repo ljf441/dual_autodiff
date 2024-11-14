@@ -1,3 +1,7 @@
 Metadata-Version: 2.1
 Name: dual_autodiff_x
-Version: 0.0.0
+Version: 0.0.1
+Summary: A Python package for automatic differentiation using dual numbers.
+Author-email: Laura Just Fung <lj441@cam.ac.uk>
+Requires-Python: >=3.10
+Requires-Dist: numpy
