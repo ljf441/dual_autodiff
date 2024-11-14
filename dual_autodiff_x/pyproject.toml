@@ -1,3 +1,33 @@
 [build-system]
-requires = ["setuptools", "cython", "numpy"]
+requires = ["setuptools", "wheel", "setuptools_scm", "Cython", "numpy"]  # Build requirements
 build-backend = "setuptools.build_meta"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

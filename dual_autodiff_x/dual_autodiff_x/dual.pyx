@@ -1,7 +1,6 @@
-cimport numpy as np
-from libc.math cimport sin, cos, tan, log, exp
+import numpy as np
 
-cdef class Dual:
+class Dual:
     """
     A class to implement dual numbers.
 
@@ -9,7 +8,6 @@ cdef class Dual:
         real (int, float): real part of dual number.
         dual (int, float): dual part of dual number.
     """
-    cdef float real, dual
 
     def __init__(self, real, dual):
         """
@@ -19,13 +17,8 @@ cdef class Dual:
             real (int, float): real part of dual number.
             dual (int, float): dual part of dual number.
         """
-        print(f"Initializing Dual with real={real}, dual={dual}")
         self.real = real
         self.dual = dual
-
-    def __getattr(self, name):
-        print(f"Acessing attribute: {name}")
-        return super().__getattr__(name)
 
     def __add__(self, x):
         """
@@ -154,7 +147,7 @@ cdef class Dual:
         Returns:
             Dual: A dual number of the sine.
         """
-        return Dual(sin(self.real), self.dual*cos(self.real))
+        return Dual(np.sin(self.real), self.dual*np.cos(self.real))
     
     def cos(self):
         """
@@ -163,7 +156,7 @@ cdef class Dual:
         Returns:
             Dual: A dual number of the cosine.
         """
-        return Dual(cos(self.real), - self.dual*sin(self.real))
+        return Dual(np.cos(self.real), - self.dual*np.sin(self.real))
 
     def tan(self):
         """
@@ -172,7 +165,7 @@ cdef class Dual:
         Returns:
             Dual: A dual number of the tangent.
         """
-        return Dual(tan(self.real), self.dual*(1/cos(self.real))**2)
+        return Dual(np.tan(self.real), self.dual*(1/np.cos(self.real))**2)
 
     def log(self):
         """
@@ -183,7 +176,7 @@ cdef class Dual:
         """
         if self.real <=0:
             raise Exception("Logarithm is undefined for non-positive real numbers.")
-        return Dual(log(self.real), self.dual/self.real)
+        return Dual(np.log(self.real), self.dual/self.real)
 
     def exp(self):
         """
@@ -192,7 +185,7 @@ cdef class Dual:
         Returns:
             Dual: A dual number of the exponential.
         """
-        return Dual(exp(self.real), self.dual*(exp(self.real)))
+        return Dual(np.exp(self.real), self.dual*(np.exp(self.real)))
 
     def __pow__(self, x):
         """
@@ -206,10 +199,10 @@ cdef class Dual:
         """
         if isinstance(x, Dual):
             R_real = self.real**x.real
-            R_dual = x.real*self.real**(x.real - 1) * x.dual + (self.real**x.real)*log(self.real)*x.dual
+            R_dual = x.real*self.real**(x.real - 1) * x.dual + (self.real**x.real)*np.log(self.real)*x.dual
         else:
             R_real = self.real**x
-            R_dual = (x*self.real**(x - 1)) * self.dual
+            R_dual = x*self.real**(x - 1) * self.dual
         return Dual(R_real, R_dual)
     
     def __rpow__(self, x):
@@ -222,7 +215,7 @@ cdef class Dual:
         Returns:
             Dual: A dual number of the multiplication.
         """
-        return Dual(x**self.real, x**self.real * self.dual * log(x))
+        return Dual(x**self.real, x**self.real * self.dual * np.log(x))
     
     def __repr__(self):
         """
@@ -246,13 +239,13 @@ def cos(x):
     """
     if isinstance(x, Dual):
         return x.cos()
-    return cos(x)
+    return np.cos(x)
 
 @staticmethod
 def sin(x):
     """
     Implements sine function depending if x is a dual number or not.
-        
+    
     Parameters:
             x (Dual or real): dual number or real number.
 
@@ -261,13 +254,13 @@ def sin(x):
     """
     if isinstance(x, Dual):
         return x.sin()
-    return sin(x)
+    return np.sin(x)
 
 @staticmethod
 def tan(x):
     """
     Implements tangent function depending if x is a dual number or not.
-        
+    
     Parameters:
             x (Dual or real): dual number or real number.
 
@@ -276,7 +269,7 @@ def tan(x):
     """
     if isinstance(x, Dual):
         return x.tan()
-    return tan(x)
+    return np.tan(x)
 
 @staticmethod
 def log(x):
@@ -291,13 +284,13 @@ def log(x):
     """
     if isinstance(x, Dual):
         return x.log()
-    return log(x)
+    return np.log(x)
 
 @staticmethod
 def exp(x):
     """
     Implements exponential function depending if x is a dual number or not.
-        
+    
     Parameters:
             x (Dual or real): dual number or real number.
 
@@ -306,4 +299,4 @@ def exp(x):
     """
     if isinstance(x, Dual):
         return x.exp()
-    return exp(x)
+    return np.exp(x)
