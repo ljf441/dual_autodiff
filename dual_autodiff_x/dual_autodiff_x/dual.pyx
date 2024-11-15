@@ -1,21 +1,24 @@
 import numpy as np
+import cython
 
-class Dual:
+cdef class Dual:
     """
     A class to implement dual numbers.
 
     Attributes:
-        real (int, float): real part of dual number.
-        dual (int, float): dual part of dual number.
+        real (float): real part of dual number.
+        dual (float): dual part of dual number.
     """
+    real = cython.declare(cython.float, visibility="public")
+    dual = cython.declare(cython.float, visibility="public")
 
     def __init__(self, real, dual):
         """
         Initialises Dual with given parameters.
 
         Parameters:
-            real (int, float): real part of dual number.
-            dual (int, float): dual part of dual number.
+            real (float): real part of dual number.
+            dual (float): dual part of dual number.
         """
         self.real = real
         self.dual = dual

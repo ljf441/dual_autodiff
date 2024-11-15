@@ -14,8 +14,7 @@ Dual numbers are useful for automatic differentiation and numerical analysis.
    :maxdepth: 2
    :caption: Contents:
 
-   modules
-
+   dual_autodiff.ipynb
 
 Dual Class
 ==========
@@ -34,3 +33,39 @@ Instance Methods
 .. automethod:: dual_autodiff.Dual.__truediv__
 .. automethod:: dual_autodiff.Dual.__pow__
 .. automethod:: dual_autodiff.Dual.__repr__
+
+Installation
+================
+
+Ensure you have Python 3.10 or higher. Install the package and its dependencies with:
+
+.. code-block:: bash
+
+    pip install -e .
+
+
+Usage
+================
+
+Here's a quick example of how to use the package:
+
+.. code-block:: python
+
+    # import the package
+    import dual_autodiff as df
+
+    # create dual numbers
+    x = df.Dual(2, 1)
+    y = df.Dual(3, 2)
+
+    # perform arithmetic and trigonometric operations
+    a = x + y
+    b = x - y
+    c = x * y
+    d = x / y
+    e = x**y
+    f = x.sin()
+    g = x.cos()
+    h = x.tan()
+    i = x.log()
+    j = x.exp()

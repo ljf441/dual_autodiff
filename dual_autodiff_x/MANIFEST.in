@@ -1,1 +1,3 @@
 exclude *.pyx
+include dual_autodiff_x/dual_autodiff_x.cpython-*.so
+recursive-include dual_autodiff_x *

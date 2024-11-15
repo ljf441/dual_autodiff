@@ -19,15 +19,16 @@ release = 'beta'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ['sphinx.ext.autodoc', 'sphinx.ext.autosummary', 'sphinx.ext.napoleon', 'sphinx_autodoc_typehints']
+extensions = ['sphinx.ext.autodoc', 'sphinx.ext.autosummary', 'sphinx.ext.napoleon', 'sphinx_autodoc_typehints', 'sphinx.ext.viewcode', "myst_nb"]
 
 templates_path = ['_templates']
 exclude_patterns = []
-
 master_doc = 'index'
 
 autodoc_default_flags = ['members', 'undoc-members', 'show-inheritance']
 
+nbsphinx_execute = 'always'
+nbsphinx_allow_errors = True
 
 
 # -- Options for HTML output -------------------------------------------------

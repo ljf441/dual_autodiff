@@ -4,6 +4,10 @@ build-backend = "setuptools.build_meta"
 
 [tool.cibuildwheel]
 archs = ["x86_64"]
+skip = ["cp310-musllinux*", "cp311-musllinux*", "pp*", "cp312-musllinux*", "cp313*"]
+
+[tool.setuptools.packages.find]
+where = ["."]
 
 [project]
 name = "dual_autodiff_x"
@@ -12,7 +16,11 @@ description = "A Python package for automatic differentiation using dual numbers
 authors = [
     { name = "Laura Just Fung", email = "lj441@cam.ac.uk" }
 ]
-requires-python = ">=3.10, <3.12"
+requires-python = ">=3.10"
 dependencies = [
     "numpy"
 ]
+
+[project.urls]
+Homepage = "https://github.com/ljf441/dual_autodiff"
+Issues = "https://github.com/ljf441/dual_autodiff/issues"
