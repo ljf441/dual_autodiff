@@ -1,0 +1,77 @@
+%--------------------
+% Packages
+% -------------------
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage{gentium}
+\usepackage{mathptmx} % Use Times Font
+
+
+\usepackage[pdftex]{graphicx} % Required for including pictures
+\usepackage[swedish]{babel} % Swedish translations
+\usepackage[pdftex,linkcolor=black,pdfborder={0 0 0}]{hyperref} % Format links for pdf
+\usepackage{calc} % To reset the counter in the document after title page
+\usepackage{enumitem} % Includes lists
+\usepackage{dirtree}
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily}
+
+
+\frenchspacing % No double spacing between sentences
+\linespread{1.2} % Set linespace
+\usepackage[a4paper, lmargin=0.1666\paperwidth, rmargin=0.1666\paperwidth, tmargin=0.1111\paperheight, bmargin=0.1111\paperheight]{geometry} %margins
+%\usepackage{parskip}
+
+\usepackage[all]{nowidow} % Tries to remove widows
+\usepackage[protrusion=true,expansion=true]{microtype} % Improves typography, load after fontpackage is selected
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+
+%-----------------------
+% Set pdf information and add title, fill in the fields
+%-----------------------
+\hypersetup{ 	
+pdfsubject = {Research Computing Coursework},
+pdftitle = {Research Computing Coursework},
+pdfauthor = {Laura Just Fung (lj441)}
+}
+
+%-----------------------
+% Begin document
+%-----------------------
+\begin{document} %All text i dokumentet hamnar mellan dessa taggar, allt ovanför är formatering av dokumentet
+
+\section{Introduction}
+This report discusses development of the package designed to implement automatic differentiation using dual numbers in Python. 
+
+\section{Repository}
+\subsection{Structure}
+Good practice suggests the following directory structure:
+
+\dirtree{%
+.1 dual{\_}autodiff.
+.2 dual{\_}autodiff.
+.3 {\_}{\_}init{\_}{\_}.py.
+.3 dual.py.
+.2 tests.
+.3 test{\_}dual.py.
+.2 docs.
+.3 ....
+.2 build.
+.3 ....
+.2 source.
+.3 ....
+.2 pyproject.toml.
+.2 setup.py.
+.2 README.md.
+.2 Makefile.
+.2 LICENSE.
+}
+
+\subsection{Project configuration}
+The following is the contents of the \texttt{pyproject.toml} file.
+\lstinputlisting[language=Fortran]{pyproject.toml}
+
+\end{document}
