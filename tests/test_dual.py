@@ -23,6 +23,13 @@ def test_add():
     assert y.real == 4
     assert y.dual == 2
 
+def test_radd():
+    x = Dual(1, 2)
+    y = 3 + x
+
+    assert y.real == 4
+    assert y.dual == 2
+
 def test_dual_sub():
     x = Dual(1, 4)
     y = Dual(2, 3)
@@ -38,6 +45,13 @@ def test_sub():
     assert y.real == -2
     assert y.dual == 2
 
+def test_rsub():
+    x = Dual(1, 3)
+    y = 3 - x
+
+    assert y.real == 2
+    assert y.dual == -3
+
 def test_dual_mul():
     x = Dual(1, 2)
     y = Dual(3, 4)
@@ -49,6 +63,13 @@ def test_dual_mul():
 def test_mul():
     x = Dual(1, 2)
     y = x * 3
+
+    assert y.real == 3
+    assert y.dual == 6
+
+def test_rmul():
+    x = Dual(1, 2)
+    y = 3*x
 
     assert y.real == 3
     assert y.dual == 6
@@ -67,6 +88,13 @@ def test_div():
 
     assert y.real == 3
     assert y.dual == 1
+
+def test_rdiv():
+    x = Dual(3, 2)
+    y = 6 / x
+
+    assert y.real == 2
+    assert y.dual == -6*2/3**2
 
 def test_dual_cos():
     x = Dual(1, 1)
