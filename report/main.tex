@@ -56,6 +56,8 @@ Good practice suggests the following directory structure:
 
 \dirtree{%
 .1 dual{\_}autodiff.
+.2 report.
+.3 ....
 .2 dual{\_}autodiff.
 .3 {\_}{\_}init{\_}{\_}.py.
 .3 dual.py.
@@ -76,28 +78,28 @@ Good practice suggests the following directory structure:
 
 \subsection{Project configuration}
 The following is the contents of the \texttt{pyproject.toml} file.
-\lstinputlisting[caption={pyproject.toml}]{pyproject.toml}
+\lstinputlisting[caption={pyproject.toml}]{../pyproject.toml}
 
 \section{Implementation}
 \subsection{Dual class}
 The \texttt{Dual} class is defined and initialised like so:
-\lstinputlisting[caption={Dual class},language=python,linerange={2,3,12,20,21,22}]{dual_autodiff/dual.py}
+\lstinputlisting[caption={Dual class},language=python,linerange={2,3,12,20,21,22}]{../dual_autodiff/dual.py}
 A dual number can be initialised as follows:
-\jupynotex[2]{dual_autodiff.ipynb}
+\jupynotex[2]{../dual_autodiff.ipynb}
 And it produces the following output when printed:
-\jupynotex[3]{dual_autodiff.ipynb}
+\jupynotex[3]{../dual_autodiff.ipynb}
 \subsection{Arithmetic operations}
 Arithmetic operations include: addition, subtraction, multiplication, and division. The \texttt{Dual} class allows for these arithmetic operations performed over dual numbers as well as real numbers.
 An example is as follows:
-\jupynotex[4]{dual_autodiff.ipynb}
+\jupynotex[4]{../dual_autodiff.ipynb}
 \subsection{Trigonometric operations}
 Trigonometric operations include: sine, cosine, and tangent. The \texttt{Dual} class allows for these trigonometric operations performed over dual numbers.
 An example is as follows:
-\jupynotex[5]{dual_autodiff.ipynb}
+\jupynotex[5]{../dual_autodiff.ipynb}
 \subsection{Other operations}
 Other implemented operations that the \texttt{Dual} class allows for over dual numbers are: natural logarithm, exponential, power.
 An example is as follows:
-\jupynotex[6,7]{dual_autodiff.ipynb}
+\jupynotex[6,7]{../dual_autodiff.ipynb}
 
 \section{Package}
 The package is installable with \texttt{pip install -e .} from the root project folder. The package is importable with \texttt{import dual\_autodf as df}.
@@ -108,7 +110,7 @@ Consider the function
     f(x) = \log{\sin{x}} + x^2 \cos{x}
 \end{math}
 where $x=1.5$. The derivative can be easily calculated using \texttt{dual\_autodiff}:
-\jupynotex[8]{dual_autodiff.ipynb}
+\jupynotex[8]{../dual_autodiff.ipynb}
 
 \section{Test suite}
 

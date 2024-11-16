@@ -1,9 +1,9 @@
-PWD /home/ljf1/dis/dual_autodiff
+PWD /home/ljf1/dis/dual_autodiff/report
 INPUT /etc/texmf/web2c/texmf.cnf
 INPUT /usr/share/texmf/web2c/texmf.cnf
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-INPUT /home/ljf1/dis/dual_autodiff/main.tex
+INPUT /home/ljf1/dis/dual_autodiff/report/main.tex
 OUTPUT main.log
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -318,9 +318,9 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ectt1095.tfm
-INPUT ./pyproject.toml
-INPUT ./pyproject.toml
-INPUT pyproject.toml
+INPUT ../pyproject.toml
+INPUT ../pyproject.toml
+INPUT ../pyproject.toml
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmb8t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
 INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
@@ -333,10 +333,10 @@ INPUT /usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc
 INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-INPUT ./dual_autodiff/dual.py
-INPUT ./dual_autodiff/dual.py
-INPUT dual_autodiff/dual.py
-INPUT python3 jupynotex.py 'dual_autodiff.ipynb' '2' ''
+INPUT ../dual_autodiff/dual.py
+INPUT ../dual_autodiff/dual.py
+INPUT ../dual_autodiff/dual.py
+INPUT python3 jupynotex.py '../dual_autodiff.ipynb' '2' ''
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/t1cmss.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/t1cmss.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/t1cmss.fd
@@ -357,25 +357,25 @@ INPUT _minted-main/9293119E356F9E25F0F70307BAC911A2541C68F80C6A6F06151AFD63BAE50
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmr8t.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ectt0900.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecit0900.tfm
-INPUT python3 jupynotex.py 'dual_autodiff.ipynb' '3' ''
+INPUT python3 jupynotex.py '../dual_autodiff.ipynb' '3' ''
 OUTPUT main.pyg
 INPUT ./main.pyg
 INPUT ./_minted-main/41BA6587228E5D176EFC2DEBD2AD147D541C68F80C6A6F06151AFD63BAE50EBC.pygtex
 INPUT ./_minted-main/41BA6587228E5D176EFC2DEBD2AD147D541C68F80C6A6F06151AFD63BAE50EBC.pygtex
 INPUT _minted-main/41BA6587228E5D176EFC2DEBD2AD147D541C68F80C6A6F06151AFD63BAE50EBC.pygtex
-INPUT python3 jupynotex.py 'dual_autodiff.ipynb' '4' ''
+INPUT python3 jupynotex.py '../dual_autodiff.ipynb' '4' ''
 OUTPUT main.pyg
 INPUT ./main.pyg
 INPUT ./_minted-main/FA02DCA444F0E8827ED61C9497B129E2541C68F80C6A6F06151AFD63BAE50EBC.pygtex
 INPUT ./_minted-main/FA02DCA444F0E8827ED61C9497B129E2541C68F80C6A6F06151AFD63BAE50EBC.pygtex
 INPUT _minted-main/FA02DCA444F0E8827ED61C9497B129E2541C68F80C6A6F06151AFD63BAE50EBC.pygtex
-INPUT python3 jupynotex.py 'dual_autodiff.ipynb' '5' ''
+INPUT python3 jupynotex.py '../dual_autodiff.ipynb' '5' ''
 OUTPUT main.pyg
 INPUT ./main.pyg
 INPUT ./_minted-main/F6A869400D5833D16BCA2474FE386617541C68F80C6A6F06151AFD63BAE50EBC.pygtex
 INPUT ./_minted-main/F6A869400D5833D16BCA2474FE386617541C68F80C6A6F06151AFD63BAE50EBC.pygtex
 INPUT _minted-main/F6A869400D5833D16BCA2474FE386617541C68F80C6A6F06151AFD63BAE50EBC.pygtex
-INPUT python3 jupynotex.py 'dual_autodiff.ipynb' '6,7' ''
+INPUT python3 jupynotex.py '../dual_autodiff.ipynb' '6,7' ''
 OUTPUT main.pyg
 INPUT ./main.pyg
 INPUT ./_minted-main/77C9A03BF26EF8B5CFC500AF277905CE541C68F80C6A6F06151AFD63BAE50EBC.pygtex
@@ -419,7 +419,7 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmri7t.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmri7t.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmri7t.tfm
-INPUT python3 jupynotex.py 'dual_autodiff.ipynb' '8' ''
+INPUT python3 jupynotex.py '../dual_autodiff.ipynb' '8' ''
 OUTPUT main.pyg
 INPUT ./main.pyg
 INPUT ./_minted-main/DE1646A73A0DF5C54B0A0DA014397B13541C68F80C6A6F06151AFD63BAE50EBC.pygtex
