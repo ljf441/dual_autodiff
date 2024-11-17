@@ -14,7 +14,7 @@ Dual numbers are useful for automatic differentiation and numerical analysis.
    :maxdepth: 2
    :caption: Contents:
 
-   dual_autodiff.ipynb
+   tutorial.ipynb
 
 Dual Class
 ==========
