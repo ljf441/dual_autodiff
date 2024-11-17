@@ -1,7 +1,9 @@
 Dockerfile
 MANIFEST.in
+__init__.py
 pyproject.toml
 setup.py
+tox.ini
 dual_autodiff_x/Dockerfile
 dual_autodiff_x/__init__.py
 dual_autodiff_x/dual.c
@@ -14,3 +16,8 @@ dual_autodiff_x.egg-info/not-zip-safe
 dual_autodiff_x.egg-info/requires.txt
 dual_autodiff_x.egg-info/top_level.txt
 dual_autodiff_x/__pycache__/__init__.cpython-312.pyc
+wheelhouse/dual_autodiff_x-0.0.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+wheelhouse/dual_autodiff_x-0.0.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+wheelhouse/dual_autodiff_x-0.0.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+wheelhouse/dual_autodiff_x-0.0.1-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+wheelhouse/dual_autodiff_x-0.0.1-pp310-pypy310_pp73-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl
