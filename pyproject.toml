@@ -14,7 +14,8 @@ authors = [
 ]
 
 dependencies = [
-    "numpy"
+    "numpy",
+    "mpmath"
 ]
 
 [tool.setuptools_scm]

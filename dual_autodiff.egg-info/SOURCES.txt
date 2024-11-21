@@ -16,7 +16,6 @@ _minted-main/F6A869400D5833D16BCA2474FE386617541C68F80C6A6F06151AFD63BAE50EBC.py
 _minted-main/FA02DCA444F0E8827ED61C9497B129E2541C68F80C6A6F06151AFD63BAE50EBC.pygtex
 _minted-main/default.pygstyle
 dual_autodiff/__init__.py
-dual_autodiff/dual.c
 dual_autodiff/dual.py
 dual_autodiff/version.py
 dual_autodiff.egg-info/PKG-INFO
@@ -35,6 +34,7 @@ dual_autodiff_x/__init__.py
 dual_autodiff_x/pyproject.toml
 dual_autodiff_x/setup.py
 dual_autodiff_x/tox.ini
+dual_autodiff_x/__pycache__/__init__.cpython-312.pyc
 dual_autodiff_x/build/lib.linux-x86_64-cpython-312/dual_autodiff_x.cpython-312-x86_64-linux-gnu.so
 dual_autodiff_x/build/lib.linux-x86_64-cpython-312/dual_autodiff_x/dual.cpython-312-x86_64-linux-gnu.so
 dual_autodiff_x/build/lib.linux-x86_64-cpython-312/dual_autodiff_x/dual_autodiff_x.cpython-312-x86_64-linux-gnu.so
@@ -77,7 +77,8 @@ report/_minted-main/F6A869400D5833D16BCA2474FE386617541C68F80C6A6F06151AFD63BAE5
 report/_minted-main/FA02DCA444F0E8827ED61C9497B129E2541C68F80C6A6F06151AFD63BAE50EBC.pygtex
 report/_minted-main/default.pygstyle
 source/conf.py
-source/dual_autodiff.ipynb
 source/index.rst
+source/tutorial.ipynb
 tests/test_dual.py
+tests/test_dual_x.py
 tests/__pycache__/test_dual.cpython-312-pytest-8.3.3.pyc

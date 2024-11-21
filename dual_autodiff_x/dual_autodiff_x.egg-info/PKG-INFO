@@ -7,3 +7,5 @@ Project-URL: Homepage, https://github.com/ljf441/dual_autodiff
 Project-URL: Issues, https://github.com/ljf441/dual_autodiff/issues
 Requires-Python: >=3.10
 Requires-Dist: numpy
+Requires-Dist: cython
+Requires-Dist: mpmath

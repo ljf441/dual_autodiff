@@ -1,5 +1,6 @@
 from setuptools import setup, find_packages, Extension
 from Cython.Build import cythonize
+from Cython.Distutils import build_ext
 import numpy as np
 
 ext_modules = [
@@ -15,8 +16,13 @@ setup(
     version="0.0.1",
     description="A Python package for automatic differentiation using dual numbers.",
     python_requires=">=3.10",
+    cmdclass={"build_ext": build_ext},
     packages=find_packages(), 
     ext_modules=cythonize(ext_modules),
     include_dirs=[np.get_include()],
     zip_safe=False,
+    install_requires=[
+        'numpy',
+        'mpmath'
+    ],
 )

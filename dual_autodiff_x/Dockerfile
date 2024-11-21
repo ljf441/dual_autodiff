@@ -6,7 +6,7 @@ WORKDIR /app
 
 COPY . /app
 
-RUN pip install --upgrade pip setuptools wheel setuptools_scm build numpy Cython
+RUN pip install --upgrade pip setuptools wheel setuptools_scm build numpy Cython mpmath
 
 RUN python3.10 setup.py build_ext --inplace --verbose
 

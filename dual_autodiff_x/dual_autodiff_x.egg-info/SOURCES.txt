@@ -4,6 +4,7 @@ __init__.py
 pyproject.toml
 setup.py
 tox.ini
+__pycache__/__init__.cpython-312.pyc
 dual_autodiff_x/Dockerfile
 dual_autodiff_x/__init__.py
 dual_autodiff_x/dual.c

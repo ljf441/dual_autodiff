@@ -1,4 +1,5 @@
 import numpy as np
+import mpmath as mp
 import cython
 
 cdef class Dual:
@@ -6,9 +7,10 @@ cdef class Dual:
     A class to implement dual numbers.
 
     Attributes:
-        real (float): real part of dual number.
-        dual (float): dual part of dual number.
+        real (int, float): real part of dual number.
+        dual (int, float): dual part of dual number.
     """
+
     real = cython.declare(cython.float, visibility="public")
     dual = cython.declare(cython.float, visibility="public")
 
@@ -17,8 +19,8 @@ cdef class Dual:
         Initialises Dual with given parameters.
 
         Parameters:
-            real (float): real part of dual number.
-            dual (float): dual part of dual number.
+            real (int, float): real part of dual number.
+            dual (int, float): dual part of dual number.
         """
         self.real = real
         self.dual = dual
@@ -28,7 +30,7 @@ cdef class Dual:
         Adds two dual numbers or a dual number and a real number.
 
         Parameters:
-        x (Dual, float): The other dual number or a real number.
+        x (Dual, int, real): The other dual number or a real number.
 
         Returns:
             Dual: A dual number of the sum.
@@ -43,7 +45,7 @@ cdef class Dual:
         Reverse additiion: adds a real number and a dual number.
 
         Parameters:
-        x (Dual, float): The real number.
+        x (Dual, int, float): The real number.
 
         Returns:
             Dual: A dual number of the sum.
@@ -55,7 +57,7 @@ cdef class Dual:
         Subtracts a dual number from another or subtracts a real number from a dual number.
         
         Parameters:
-        x (Dual, float): The other dual number or a real number.
+        x (Dual, int, float): The other dual number or a real number.
 
         Returns:
             Dual: A dual number of the subtraction.
@@ -70,7 +72,7 @@ cdef class Dual:
         Reverse subtraction: subtracts a dual number from a real number.
 
         Parameters:
-        x (Dual, float): The real number.
+        x (Dual, int, float): The real number.
 
         Returns:
             Dual: A dual number of the subtraction.
@@ -82,7 +84,7 @@ cdef class Dual:
         Multiplies two dual numbers or a dual number and a real number.
         
         Parameters:
-        x (Dual, float): The other dual number or a real number.
+        x (Dual, int, float): The other dual number or a real number.
 
         Returns:
             Dual: A dual number of the multiplication.
@@ -99,7 +101,7 @@ cdef class Dual:
         Reverse multiplication: multiplies a real number and a dual number.
 
         Parameters:
-        x (Dual, float): The real number.
+        x (Dual, int, float): The real number.
 
         Returns:
             Dual: A dual number of the multiplication.
@@ -111,7 +113,7 @@ cdef class Dual:
         Divides one dual number with another dual number or a real number.
 
         Parameters:
-        x (Dual, float): The other dual number or a real number.
+        x (Dual, int, float): The other dual number or a real number.
 
         Returns:
             Dual: A dual number of the division.
@@ -132,7 +134,7 @@ cdef class Dual:
         Reverse division: divides a real number with a dual number.
 
         Parameters:
-        x (Dual, float): The real number.
+        x (int, float): The real number.
 
         Returns:
             Dual: A dual number of the division.
@@ -143,36 +145,296 @@ cdef class Dual:
         R_dual = -x*self.dual / self.real**2
         return Dual(R_real, R_dual)
 
+    def __floordiv__(self, x):
+        """
+        Divides one dual number with another dual or real number, returning the floor.
+
+        Parameters:
+        x (Dual, int, float): The other dual number or the real number.
+
+        Returns:
+            Dual: A dual number of the floor division.
+        """
+        if isinstance(x, Dual):
+            if x.real == 0:
+                raise ZeroDivisionError("Denominator is zero")
+            R_real = self.real//x.real
+            R_dual = (self.dual*x.real - self.real*x.dual)//(x.dual**2)
+            return Dual(R_real, R_dual)
+        else:
+            if x == 0:
+                raise ZeroDivisionError("Denominator is zero")
+            return Dual(self.real//x, self.dual//x)
+
+    def __rfloordiv__(self, x):
+        """
+        Reverse floor division: divides a real number with a dual number, returning the floor.
+
+        Parameters:
+        x (int, float): The real number.
+
+        Returns:
+            Dual: A dual number of the floor division.
+        """
+        if self.real == 0:
+            raise ZeroDivisionError("Denominator is zero")
+        R_real = x//self.real
+        R_dual = -x*self.dual // self.real**2
+        return Dual(R_real, R_dual)
+    
+    dfuncs = {
+        'acos':'arccos',
+        'asin':'arcsin',
+        'atan':'arctan',
+        'acosh':'arccosh',
+        'asinh':'arcsinh',
+        'atanh':'arctanh',
+        'asech':'arcsech',
+        'acsch':'arccsch',
+    }
+    
+    def __array__ufunc__(self, ufunc, method, inputs, *args, **kwargs):
+
+        if isinstance(self, Dual) and method == "call":
+            ufunc_name = ufunc.__name__
+            if hasattr(self, ufunc_name) or ufunc_name == self.dfuncs.get(ufunc_name):
+                dfunc = getattr(self, ufunc_name)
+                return dfunc()
+            else:
+                return NotImplemented
+        else:
+            return NotImplemented
+    
     def sin(self):
         """
-        Computes sine of the dual number.
+        Computes the sine of the dual number.
 
         Returns:
             Dual: A dual number of the sine.
         """
         return Dual(np.sin(self.real), self.dual*np.cos(self.real))
     
+    def arcsin(self):
+        """
+        Computes the inverse sine of the dual number.
+
+        Returns:
+            Dual: A dual number of the inverse sine.
+        """
+        if self.real >= 1 or self.real <= -1:
+            raise Exception("Inverse sine undefined for x not in (-1, 1).")
+        return Dual(np.arcsin(self.real), self.dual/np.sqrt(1-self.real**2))
+    
+    def sinh(self):
+        """
+        Computes the hyperbolic sine of the dual number.
+
+        Returns:
+            Dual: A dual number of the hyperbolic sine.
+        """
+        return Dual(np.sinh(self.real), self.dual*np.cosh(self.real))
+    
+    def arcsinh(self):
+        """
+        Computes the inverse hyperbolic sine of the dual number.
+
+        Returns:
+            Dual: A dual number of the inverse hyperbolic sine.
+        """
+        return Dual(np.arcsinh(self.real), self.dual/np.sqrt(1+self.real**2))
+    
+    def csc(self):
+        """
+        Computes the cosecant of the dual number.
+
+        Returns:
+            Dual: A dual number of the cosecant.
+        """
+        return Dual(1/np.sin(self.real), -self.dual/(np.tan(self.real)*np.sin(self.real)))
+    
+    def arccsc(self):
+        """
+        Computes the inverse cosecant of the dual number.
+
+        Returns:
+            Dual: A dual number of the inverse cosecant.
+        """
+        if self.real > 1 or self.real < -1:
+            return Dual(float(mp.acsc(self.real)), -self.dual/(np.abs(self.real)*np.sqrt(self.real**2 - 1)))
+        else:
+            raise Exception("Inverse cosecant derivative undefined when x is in range [-1, 1]")
+    
+    def csch(self):
+        """
+        Computes the hyperbolic cosecant of the dual number.
+
+        Returns:
+            Dual: A dual number of the hyperbolic cosecant.
+        """
+        return Dual(1/np.sinh(self.real), -self.dual/(np.tanh(self.real)*np.sinh(self.real)))
+    
+    def arccsch(self):
+        """
+        Computes the inverse hyperbolic cosecant of the dual number.
+
+        Returns:
+            Dual: A dual number of the inverse hyperbolic cosecant.
+        """
+        return Dual(np.log(1/self.real + np.sqrt(1 + 1/self.real**2)),-self.dual/(self.real**2 * np.sqrt(1 + 1/self.real**2)))
+    
     def cos(self):
         """
-        Computes cosine of the dual number.
+        Computes the cosine of the dual number.
 
         Returns:
             Dual: A dual number of the cosine.
         """
-        return Dual(np.cos(self.real), - self.dual*np.sin(self.real))
+        return Dual(np.cos(self.real), -self.dual*np.sin(self.real))
+    
+    def arccos(self):
+        """
+        Computes the inverse cosine of the dual number.
+
+        Returns:
+            Dual: A dual number of the inverse cosine.
+        """
+        if self.real >= 1 or self.real <= -1:
+            raise Exception("Inverse cosine undefined for x not in (-1, 1).")
+        else:
+            return Dual(np.arccos(self.real), -self.dual/np.sqrt(1-self.real**2))
+    
+    def cosh(self):
+        """
+        Computes the hyperbolic cosine of the dual number.
+
+        Returns:
+            Dual: A dual number of the hyperbolic cosine.
+        """
+        return Dual(np.cosh(self.real), -self.dual*np.sinh(self.real))
+    
+    def arccosh(self):
+        """
+        Computes the inverse hyerbolic cosine of the dual number.
+
+        Returns:
+            Dual: A dual number of the inverse hyperbolic cosine.
+        """
+        if self.real > 1:
+            return Dual(np.arccosh(self.real), self.dual/np.sqrt(self.real**2 - 1))
+        else:
+            raise Exception(f"Inverse hyperbolic cosine undefined for x not in (1,\u221E)")
+
+    def sec(self):
+        """
+        Computes the secant of the dual number.
+
+        Returns:
+            Dual: A dual number of the secant.
+        """
+        return Dual(1/np.cos(self.real), -self.dual*np.tan(self.real)*(1/np.cos(self.real)))
+    
+    def arcsec(self):
+        """
+        Computes the inverse secant of the dual number.
+
+        Returns:
+            Dual: A dual number of the inverse secant.
+        """
+        if self.real > 1 or self.real < -1:
+            return Dual(float(mp.asec(self.real)),self.dual/(np.abs(self.real) * np.sqrt(self.real**2 - 1))) 
+        else:
+            raise Exception("Inverse secant undefined in range [-1, 1]")
+    
+    def sech(self):
+        """
+        Computes the hyperbolic secant of the dual number.
+
+        Returns:
+            Dual: A dual numbre of the hyperbolic secant.
+        """
+        return Dual(1/np.cosh(self.real), -self.dual*np.tanh(self.real)/np.cosh(self.real))
+    
+    def arcsech(self):
+        """
+        Computes the inverse hyperbolic secant of the dual number.
+
+        Returns:
+            Dual: A dual number of the inverse hyperbolic secant.
+        """
+        if (self.real > 0) and (self.real <= 1):
+            return Dual(np.log(1/self.real + np.sqrt(1/self.real**2 - 1)), -self.dual/(np.abs(self.real) * np.sqrt(1 - self.real**2)))
+        else:
+            raise Exception("Inverse hyperbolic secant undefined for x out of range (0, 1]")
 
     def tan(self):
         """
-        Computes tangent of the dual number.
+        Computes the tangent of the dual number.
 
         Returns:
             Dual: A dual number of the tangent.
         """
         return Dual(np.tan(self.real), self.dual*(1/np.cos(self.real))**2)
 
+    def arctan(self):
+        """
+        Computes the inverse tangent of the dual number.
+
+        Returns:
+            Dual: A dual number of the inverse tangent.
+        """
+        return Dual(np.arctan(self.real), self.dual/(1 + self.real**2))
+    
+    def tanh(self):
+        """
+        Computes the hyperbolic tangent of the dual number.
+
+        Returns:
+            Dual: A dual number of the hyperbolic tangent.
+        """
+        return Dual(np.tanh(self.real), self.dual*(1/np.cosh(self.real))**2)
+    
+    def arctanh(self):
+        """
+        Computes the inverse hyperbolic tangent of the dual number.
+
+        Returns:
+            Dual: A dual number of the inverse hyperbolic tangent.
+        """
+        if np.abs(self.real) < 1:
+            return Dual(0.5*(np.log(1 + self.real) - np.log(1 - self.real)), self.dual/(1 - self.real**2))
+        else:
+            raise Exception("Inverse hyperbolic tangent undefined outside of range (-1,1)")
+    
+    def cot(self):
+        """
+        Computes the cotangent of the dual number.
+
+        Returns:
+            Dual: A dual number of the cotangent.
+        """
+        return Dual(1/np.tan(self.real), -self.dual/np.sin(self.real)**2)
+
+    def arccot(self):
+        """
+        Computes the inverse cotangent of the dual number.
+
+        Returns:
+            Dual: A dual number of the inverse cotangent.
+        """
+        return Dual(float(mp.acot(self.real)), -self.dual/(1+self.real**2))
+
+    def coth(self):
+        """
+        Computes the hyperbolic cotangent of the dual number.
+
+        Returns:
+            Dual: A dual number of the hyperbolic cotangent.
+        """
+        return Dual(1/np.tanh(self.real), -self.dual/(np.sinh(self.real)**2))
+    
     def log(self):
         """
-        Computes natural logarithm of the dual number.
+        Computes the natural logarithm of the dual number.
 
         Returns:
             Dual: A dual number of the natural logarithm.
@@ -183,7 +445,7 @@ cdef class Dual:
 
     def exp(self):
         """
-        Computes exponential of the dual number.
+        Computes the exponential of the dual number.
 
         Returns:
             Dual: A dual number of the exponential.
@@ -195,7 +457,7 @@ cdef class Dual:
         Raises a dual number to the power of another dual number or a real number.
 
         Parameters:
-        x (Dual, float): The other dual number or a real number.
+        x (Dual, int, float): The other dual number or a real number.
 
         Returns:
             Dual: A dual number of the power.
@@ -213,7 +475,7 @@ cdef class Dual:
         Raises a real number to the power of a dual number.
 
         Parameters:
-        x (Dual, float): The real number.
+        x (int, float): The real number.
 
         Returns:
             Dual: A dual number of the multiplication.
@@ -228,78 +490,3 @@ cdef class Dual:
             string: formatted string representation of dual number
         """
         return f"Dual(real={self.real}, dual={self.dual})"
-    
-@staticmethod
-def cos(x):
-    """
-    Implements cosine function depending if x is a dual number or not.
-
-    Parameters:
-            x (Dual or real): dual number or real number.
-
-        Returns:
-            Dual: the cosine of the input, either as a dual number or real number.
-    """
-    if isinstance(x, Dual):
-        return x.cos()
-    return np.cos(x)
-
-@staticmethod
-def sin(x):
-    """
-    Implements sine function depending if x is a dual number or not.
-    
-    Parameters:
-            x (Dual or real): dual number or real number.
-
-        Returns:
-            Dual: the sine of the input, either as a dual number or real number.
-    """
-    if isinstance(x, Dual):
-        return x.sin()
-    return np.sin(x)
-
-@staticmethod
-def tan(x):
-    """
-    Implements tangent function depending if x is a dual number or not.
-    
-    Parameters:
-            x (Dual or real): dual number or real number.
-
-        Returns:
-            Dual: the tangent of the input, either as a dual number or real number.
-    """
-    if isinstance(x, Dual):
-        return x.tan()
-    return np.tan(x)
-
-@staticmethod
-def log(x):
-    """
-    Implements logarithm function depending if x is a dual number or not.
-
-    Parameters:
-            x (Dual or real): dual number or real number.
-
-        Returns:
-            Dual: the natural logarithm of the input, either as a dual number or real number.
-    """
-    if isinstance(x, Dual):
-        return x.log()
-    return np.log(x)
-
-@staticmethod
-def exp(x):
-    """
-    Implements exponential function depending if x is a dual number or not.
-    
-    Parameters:
-            x (Dual or real): dual number or real number.
-
-        Returns:
-            Dual: the exponential of the input, either as a dual number or real number.
-    """
-    if isinstance(x, Dual):
-        return x.exp()
-    return np.exp(x)
