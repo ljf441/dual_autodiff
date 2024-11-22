@@ -1,6 +1,5 @@
 import numpy as np
 import mpmath as mp
-import numdifftools as nd
 
 class Dual:
     """
@@ -190,18 +189,20 @@ class Dual:
         'acsch':'arccsch',
     }
     
-    def __array__ufunc__(self, ufunc, method, inputs, *args, **kwargs):
+    def __array_ufunc__(self, ufunc, method, inputs, *args, **kwargs):
 
         if isinstance(self, Dual) and method == "call":
             ufunc_name = ufunc.__name__
             if hasattr(self, ufunc_name) or ufunc_name == self.dfuncs.get(ufunc_name):
                 dfunc = getattr(self, ufunc_name)
-                return dfunc()
+                udfunc = np.frompyfunc(dfunc, len(inputs), 1)
+                return udfunc()
             else:
                 return NotImplemented
+
+
         else:
             return NotImplemented
-    
     def sin(self):
         """
         Computes the sine of the dual number.

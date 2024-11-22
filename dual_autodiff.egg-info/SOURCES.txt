@@ -82,3 +82,4 @@ source/tutorial.ipynb
 tests/test_dual.py
 tests/test_dual_x.py
 tests/__pycache__/test_dual.cpython-312-pytest-8.3.3.pyc
+tests/__pycache__/test_dual_x.cpython-312-pytest-8.3.3.pyc

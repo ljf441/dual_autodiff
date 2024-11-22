@@ -1,0 +1,83 @@
+action: GLOB, msg: packaging
+cwd: /home/lj441/dual_autodiff/dual_autodiff_x
+cmd: /home/lj441/venvs/dis/bin/python setup.py sdist --formats=zip --dist-dir /home/lj441/dual_autodiff/dual_autodiff_x/.tox/dist
+Compiling dual_autodiff_x/dual.pyx because it changed.
+[1/1] Cythonizing dual_autodiff_x/dual.pyx
+running sdist
+running egg_info
+writing dual_autodiff_x.egg-info/PKG-INFO
+writing dependency_links to dual_autodiff_x.egg-info/dependency_links.txt
+writing requirements to dual_autodiff_x.egg-info/requires.txt
+writing top-level names to dual_autodiff_x.egg-info/top_level.txt
+reading manifest file 'dual_autodiff_x.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+/home/lj441/venvs/dis/lib/python3.6/site-packages/Cython/Compiler/Main.py:381: FutureWarning: Cython directive 'language_level' not set, using '3str' for now (Py3). This has changed from earlier releases! File: /home/lj441/dual_autodiff/dual_autodiff_x/dual_autodiff_x/dual.pyx
+  tree = Parsing.p_module(s, pxd, full_module_name)
+warning: no previously-included files found matching '*.pyx'
+warning: no files found matching 'dual_autodiff_x/dual_autodiff_x.cpython-*.so'
+writing manifest file 'dual_autodiff_x.egg-info/SOURCES.txt'
+warning: sdist: standard file not found: should have one of README, README.rst, README.txt, README.md
+
+running check
+warning: Check: missing required meta-data: url
+
+warning: Check: missing meta-data: either (author and author_email) or (maintainer and maintainer_email) must be supplied
+
+creating dual_autodiff_x-0.0.1
+creating dual_autodiff_x-0.0.1/dual_autodiff_x
+creating dual_autodiff_x-0.0.1/dual_autodiff_x.egg-info
+creating dual_autodiff_x-0.0.1/dual_autodiff_x/__pycache__
+creating dual_autodiff_x-0.0.1/wheelhouse
+copying files to dual_autodiff_x-0.0.1...
+copying Dockerfile -> dual_autodiff_x-0.0.1
+copying MANIFEST.in -> dual_autodiff_x-0.0.1
+copying __init__.py -> dual_autodiff_x-0.0.1
+copying pyproject.toml -> dual_autodiff_x-0.0.1
+copying setup.py -> dual_autodiff_x-0.0.1
+copying tox.ini -> dual_autodiff_x-0.0.1
+copying dual_autodiff_x/Dockerfile -> dual_autodiff_x-0.0.1/dual_autodiff_x
+copying dual_autodiff_x/__init__.py -> dual_autodiff_x-0.0.1/dual_autodiff_x
+copying dual_autodiff_x/dual.c -> dual_autodiff_x-0.0.1/dual_autodiff_x
+copying dual_autodiff_x/dual.cpython-312-x86_64-linux-gnu.so -> dual_autodiff_x-0.0.1/dual_autodiff_x
+copying dual_autodiff_x/dual.pyx -> dual_autodiff_x-0.0.1/dual_autodiff_x
+copying dual_autodiff_x.egg-info/PKG-INFO -> dual_autodiff_x-0.0.1/dual_autodiff_x.egg-info
+copying dual_autodiff_x.egg-info/SOURCES.txt -> dual_autodiff_x-0.0.1/dual_autodiff_x.egg-info
+copying dual_autodiff_x.egg-info/dependency_links.txt -> dual_autodiff_x-0.0.1/dual_autodiff_x.egg-info
+copying dual_autodiff_x.egg-info/not-zip-safe -> dual_autodiff_x-0.0.1/dual_autodiff_x.egg-info
+copying dual_autodiff_x.egg-info/requires.txt -> dual_autodiff_x-0.0.1/dual_autodiff_x.egg-info
+copying dual_autodiff_x.egg-info/top_level.txt -> dual_autodiff_x-0.0.1/dual_autodiff_x.egg-info
+copying dual_autodiff_x/__pycache__/__init__.cpython-312.pyc -> dual_autodiff_x-0.0.1/dual_autodiff_x/__pycache__
+copying wheelhouse/dual_autodiff_x-0.0.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl -> dual_autodiff_x-0.0.1/wheelhouse
+copying wheelhouse/dual_autodiff_x-0.0.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl -> dual_autodiff_x-0.0.1/wheelhouse
+copying wheelhouse/dual_autodiff_x-0.0.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl -> dual_autodiff_x-0.0.1/wheelhouse
+copying wheelhouse/dual_autodiff_x-0.0.1-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl -> dual_autodiff_x-0.0.1/wheelhouse
+copying wheelhouse/dual_autodiff_x-0.0.1-pp310-pypy310_pp73-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl -> dual_autodiff_x-0.0.1/wheelhouse
+Writing dual_autodiff_x-0.0.1/setup.cfg
+creating /home/lj441/dual_autodiff/dual_autodiff_x/.tox/dist
+creating '/home/lj441/dual_autodiff/dual_autodiff_x/.tox/dist/dual_autodiff_x-0.0.1.zip' and adding 'dual_autodiff_x-0.0.1' to it
+adding 'dual_autodiff_x-0.0.1/MANIFEST.in'
+adding 'dual_autodiff_x-0.0.1/tox.ini'
+adding 'dual_autodiff_x-0.0.1/setup.cfg'
+adding 'dual_autodiff_x-0.0.1/pyproject.toml'
+adding 'dual_autodiff_x-0.0.1/__init__.py'
+adding 'dual_autodiff_x-0.0.1/Dockerfile'
+adding 'dual_autodiff_x-0.0.1/PKG-INFO'
+adding 'dual_autodiff_x-0.0.1/setup.py'
+adding 'dual_autodiff_x-0.0.1/dual_autodiff_x.egg-info/not-zip-safe'
+adding 'dual_autodiff_x-0.0.1/dual_autodiff_x.egg-info/SOURCES.txt'
+adding 'dual_autodiff_x-0.0.1/dual_autodiff_x.egg-info/top_level.txt'
+adding 'dual_autodiff_x-0.0.1/dual_autodiff_x.egg-info/dependency_links.txt'
+adding 'dual_autodiff_x-0.0.1/dual_autodiff_x.egg-info/PKG-INFO'
+adding 'dual_autodiff_x-0.0.1/dual_autodiff_x.egg-info/requires.txt'
+adding 'dual_autodiff_x-0.0.1/dual_autodiff_x/dual.pyx'
+adding 'dual_autodiff_x-0.0.1/dual_autodiff_x/dual.cpython-312-x86_64-linux-gnu.so'
+adding 'dual_autodiff_x-0.0.1/dual_autodiff_x/dual.c'
+adding 'dual_autodiff_x-0.0.1/dual_autodiff_x/__init__.py'
+adding 'dual_autodiff_x-0.0.1/dual_autodiff_x/Dockerfile'
+adding 'dual_autodiff_x-0.0.1/dual_autodiff_x/__pycache__/__init__.cpython-312.pyc'
+adding 'dual_autodiff_x-0.0.1/wheelhouse/dual_autodiff_x-0.0.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl'
+adding 'dual_autodiff_x-0.0.1/wheelhouse/dual_autodiff_x-0.0.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl'
+adding 'dual_autodiff_x-0.0.1/wheelhouse/dual_autodiff_x-0.0.1-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl'
+adding 'dual_autodiff_x-0.0.1/wheelhouse/dual_autodiff_x-0.0.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl'
+adding 'dual_autodiff_x-0.0.1/wheelhouse/dual_autodiff_x-0.0.1-pp310-pypy310_pp73-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl'
+removing 'dual_autodiff_x-0.0.1' (and everything under it)
