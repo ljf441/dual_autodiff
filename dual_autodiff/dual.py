@@ -484,6 +484,35 @@ class Dual:
         String representation of dual number.
 
         Returns:
-            string: formatted string representation of dual number
+            string: The formatted string representation of dual number
         """
         return f"Dual(real={self.real}, dual={self.dual})"
+    def partial(self, func, *args):
+        """
+        Calculates partial derivatives of function 'func' with respect to a dual number.
+
+        The dual number has a real part equal to whatever value, and the dual part is set to one.
+        All other variables are assumed to be dual numbers and have their dual parts set to zero.
+
+        Parameters:
+            func (function): Function to differentiate.
+            *args (int, float): Dual numbers representing the variables in the order to be placed in the function.
+
+        Returns:
+            p_der (int, float): A real number representing the partial derivative.
+
+        """
+        vars = []
+        for arg in args:
+            if isinstance(arg, Dual):
+                if self == arg:
+                    vars.append(Dual(self.real, 1))
+                else:
+                    vars.append(Dual(arg.real, 0))
+            else:
+                raise Exception("This method is only defined for Dual class members.")
+
+        p_der = func(*vars).dual
+
+        return p_der
+        

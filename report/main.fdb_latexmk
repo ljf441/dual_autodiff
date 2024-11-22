@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1732211536.95419 "/home/ljf1/dis/dual_autodiff/report/main.tex" "main.pdf" "main" 1732211537.83111 0
-  "../dual_autodiff/dual.py" 1732211537.29472 14898 bd696ba5054ebfbeb5051cc1761f972d ""
+["pdflatex"] 1732271799.76904 "/home/ljf1/dis/dual_autodiff/report/main.tex" "main.pdf" "main" 1732271801.15939 0
+  "../dual_autodiff/dual.py" 1732271799.60353 15950 eb8019fe3f0050183434dd359e05895a ""
   "../pyproject.toml" 1732206531.7899 743 5f5a6669bbef0239b309c61d5bd79b1c ""
   "/etc/texmf/web2c/texmf.cnf" 1731690417.5266 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/ljf1/dis/dual_autodiff/report/main.tex" 1731871061.43784 3843 4666536c4d9014a3f9e656f3b6ba4e6b ""
@@ -214,8 +214,8 @@
   "_minted-main/FA02DCA444F0E8827ED61C9497B129E2541C68F80C6A6F06151AFD63BAE50EBC.pygtex" 1731871061.43784 1177 2bb901147836e62f6b54e0c38761c94e ""
   "_minted-main/default.pygstyle" 1731871061.43784 6428 74aba51736a5bc6590f8f7dd413c6f27 ""
   "jupynotex.sty" 1731871061.43784 388 6be853b1528fd840c2001a0c37f671d4 ""
-  "main.aux" 1732211537.74189 2458 e4d095e8a67325f9b8245e71966b6620 "pdflatex"
-  "main.out" 1732211537.74189 1466 37a157ec97852ee71842090af5dc2c7b "pdflatex"
+  "main.aux" 1732271801.06119 2458 e4d095e8a67325f9b8245e71966b6620 "pdflatex"
+  "main.out" 1732271801.06119 1466 37a157ec97852ee71842090af5dc2c7b "pdflatex"
   "main.tex" 1731871061.43784 3843 4666536c4d9014a3f9e656f3b6ba4e6b ""
   (generated)
   "main.aux"
