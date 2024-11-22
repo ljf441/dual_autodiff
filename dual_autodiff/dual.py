@@ -1,6 +1,7 @@
 import numpy as np
 import mpmath as mp
 
+HANDLED_FUNCTIONS={}
 class Dual:
     """
     A class to implement dual numbers.
@@ -20,6 +21,48 @@ class Dual:
         """
         self.real = real
         self.dual = dual
+
+    def implement(function):
+        """
+        Register a function implementatrion for Dual objects.
+        """
+        def decorator(func):
+            HANDLED_FUNCTIONS[function] = func
+            return func
+        return decorator
+
+    HANDLED_NUMPY_FUNCTIONS = {
+        'acos':'arccos',
+        'asin':'arcsin',
+        'arctan2':'arctan',
+        'acosh':'arccosh',
+        'asinh':'arcsinh',
+        'atanh':'arctanh',
+        'asech':'arcsech',
+        'acsch':'arccsch',
+    }
+    
+    def __array_ufunc__(self, ufunc, method, inputs, *args, **kwargs):
+
+        if isinstance(self, Dual) and method == "__call__":
+            ufunc_name = ufunc.__name__
+            if hasattr(self, ufunc_name):
+                dfunc = getattr(self, ufunc_name)
+            elif ufunc_name == self.HANDLED_NUMPY_FUNCTIONS.get(ufunc_name):
+                dfunc = self.HANDLED_NUMPY_FUNCTIONS.get(ufunc_name)(self)
+            else:
+                return NotImplemented
+            if dfunc: return dfunc()
+        else:
+            return NotImplemented
+        
+    def __array_function__(self, func, types, args, kwargs):
+        if func not in HANDLED_FUNCTIONS:
+            return NotImplemented
+        if not all(issubclass(t, self.__class__) for t in types):
+            return NotImplemented
+        return HANDLED_FUNCTIONS[func](*args, **kwargs)
+    
 
     def __add__(self, x):
         """
@@ -178,31 +221,7 @@ class Dual:
         R_dual = -x*self.dual // self.real**2
         return Dual(R_real, R_dual)
     
-    dfuncs = {
-        'acos':'arccos',
-        'asin':'arcsin',
-        'atan':'arctan',
-        'acosh':'arccosh',
-        'asinh':'arcsinh',
-        'atanh':'arctanh',
-        'asech':'arcsech',
-        'acsch':'arccsch',
-    }
-    
-    def __array_ufunc__(self, ufunc, method, inputs, *args, **kwargs):
-
-        if isinstance(self, Dual) and method == "call":
-            ufunc_name = ufunc.__name__
-            if hasattr(self, ufunc_name) or ufunc_name == self.dfuncs.get(ufunc_name):
-                dfunc = getattr(self, ufunc_name)
-                udfunc = np.frompyfunc(dfunc, len(inputs), 1)
-                return udfunc()
-            else:
-                return NotImplemented
-
-
-        else:
-            return NotImplemented
+    @implement(np.sin)
     def sin(self):
         """
         Computes the sine of the dual number.
@@ -212,6 +231,7 @@ class Dual:
         """
         return Dual(np.sin(self.real), self.dual*np.cos(self.real))
     
+    @implement(np.arcsin)
     def arcsin(self):
         """
         Computes the inverse sine of the dual number.
@@ -223,6 +243,7 @@ class Dual:
             raise Exception("Inverse sine undefined for x not in (-1, 1).")
         return Dual(np.arcsin(self.real), self.dual/np.sqrt(1-self.real**2))
     
+    @implement(np.sinh)
     def sinh(self):
         """
         Computes the hyperbolic sine of the dual number.
@@ -232,6 +253,7 @@ class Dual:
         """
         return Dual(np.sinh(self.real), self.dual*np.cosh(self.real))
     
+    @implement(np.arcsinh)
     def arcsinh(self):
         """
         Computes the inverse hyperbolic sine of the dual number.
@@ -241,6 +263,7 @@ class Dual:
         """
         return Dual(np.arcsinh(self.real), self.dual/np.sqrt(1+self.real**2))
     
+    @implement(mp.csc)
     def csc(self):
         """
         Computes the cosecant of the dual number.
@@ -250,6 +273,7 @@ class Dual:
         """
         return Dual(1/np.sin(self.real), -self.dual/(np.tan(self.real)*np.sin(self.real)))
     
+    @implement(mp.acsc)
     def arccsc(self):
         """
         Computes the inverse cosecant of the dual number.
@@ -262,6 +286,7 @@ class Dual:
         else:
             raise Exception("Inverse cosecant derivative undefined when x is in range [-1, 1]")
     
+    @implement(mp.csch)
     def csch(self):
         """
         Computes the hyperbolic cosecant of the dual number.
@@ -271,6 +296,7 @@ class Dual:
         """
         return Dual(1/np.sinh(self.real), -self.dual/(np.tanh(self.real)*np.sinh(self.real)))
     
+    @implement(mp.acsch)
     def arccsch(self):
         """
         Computes the inverse hyperbolic cosecant of the dual number.
@@ -280,6 +306,7 @@ class Dual:
         """
         return Dual(np.log(1/self.real + np.sqrt(1 + 1/self.real**2)),-self.dual/(self.real**2 * np.sqrt(1 + 1/self.real**2)))
     
+    @implement(np.cos)
     def cos(self):
         """
         Computes the cosine of the dual number.
@@ -289,6 +316,7 @@ class Dual:
         """
         return Dual(np.cos(self.real), -self.dual*np.sin(self.real))
     
+    @implement(np.arccos)
     def arccos(self):
         """
         Computes the inverse cosine of the dual number.
@@ -301,6 +329,7 @@ class Dual:
         else:
             return Dual(np.arccos(self.real), -self.dual/np.sqrt(1-self.real**2))
     
+    @implement(np.cosh)
     def cosh(self):
         """
         Computes the hyperbolic cosine of the dual number.
@@ -310,6 +339,7 @@ class Dual:
         """
         return Dual(np.cosh(self.real), -self.dual*np.sinh(self.real))
     
+    @implement(np.arccosh)
     def arccosh(self):
         """
         Computes the inverse hyerbolic cosine of the dual number.
@@ -322,6 +352,7 @@ class Dual:
         else:
             raise Exception(f"Inverse hyperbolic cosine undefined for x not in (1,\u221E)")
 
+    @implement(mp.sec)
     def sec(self):
         """
         Computes the secant of the dual number.
@@ -331,6 +362,7 @@ class Dual:
         """
         return Dual(1/np.cos(self.real), -self.dual*np.tan(self.real)*(1/np.cos(self.real)))
     
+    @implement(mp.asec)
     def arcsec(self):
         """
         Computes the inverse secant of the dual number.
@@ -343,6 +375,7 @@ class Dual:
         else:
             raise Exception("Inverse secant undefined in range [-1, 1]")
     
+    @implement(mp.sech)
     def sech(self):
         """
         Computes the hyperbolic secant of the dual number.
@@ -352,6 +385,7 @@ class Dual:
         """
         return Dual(1/np.cosh(self.real), -self.dual*np.tanh(self.real)/np.cosh(self.real))
     
+    @implement(mp.asech)
     def arcsech(self):
         """
         Computes the inverse hyperbolic secant of the dual number.
@@ -364,6 +398,7 @@ class Dual:
         else:
             raise Exception("Inverse hyperbolic secant undefined for x out of range (0, 1]")
 
+    @implement(np.tan)
     def tan(self):
         """
         Computes the tangent of the dual number.
@@ -373,6 +408,7 @@ class Dual:
         """
         return Dual(np.tan(self.real), self.dual*(1/np.cos(self.real))**2)
 
+    @implement(np.arctan2)
     def arctan(self):
         """
         Computes the inverse tangent of the dual number.
@@ -380,8 +416,9 @@ class Dual:
         Returns:
             Dual: A dual number of the inverse tangent.
         """
-        return Dual(np.arctan(self.real), self.dual/(1 + self.real**2))
+        return Dual(np.arctan2(self.real), self.dual/(1 + self.real**2))
     
+    @implement(np.tanh)
     def tanh(self):
         """
         Computes the hyperbolic tangent of the dual number.
@@ -391,18 +428,20 @@ class Dual:
         """
         return Dual(np.tanh(self.real), self.dual*(1/np.cosh(self.real))**2)
     
+    @implement(np.arctanh)
     def arctanh(self):
         """
-        Computes the inverse hyperbolic tangent of the dual number.
+        Computes the inverse hyperbolic tangent of the dual number. Requires real-valued input.
 
         Returns:
             Dual: A dual number of the inverse hyperbolic tangent.
         """
         if np.abs(self.real) < 1:
-            return Dual(0.5*(np.log(1 + self.real) - np.log(1 - self.real)), self.dual/(1 - self.real**2))
+            return Dual(np.arctanh(self.real), self.dual/(1 - self.real**2))
         else:
             raise Exception("Inverse hyperbolic tangent undefined outside of range (-1,1)")
     
+    @implement(mp.cot)
     def cot(self):
         """
         Computes the cotangent of the dual number.
@@ -412,6 +451,7 @@ class Dual:
         """
         return Dual(1/np.tan(self.real), -self.dual/np.sin(self.real)**2)
 
+    @implement(mp.acot)
     def arccot(self):
         """
         Computes the inverse cotangent of the dual number.
@@ -421,6 +461,7 @@ class Dual:
         """
         return Dual(float(mp.acot(self.real)), -self.dual/(1+self.real**2))
 
+    @implement(mp.coth)
     def coth(self):
         """
         Computes the hyperbolic cotangent of the dual number.
@@ -517,3 +558,88 @@ class Dual:
 
         return p_der
         
+class Collection():
+    def __init__(self, elements):
+        self.elements = list(elements)
+
+    def __getattr__(self, attr):
+        def method(*args, **kwargs):
+            return Collection([getattr(element, attr)(*args, **kwargs) for element in self.elements])
+        return method
+    
+    def __array_ufunc__(self, ufunc, method, inputs, *args, **kwargs):
+        if method == "__call__":
+            return Collection([ufunc(element) for element in self.elements])
+        raise NotImplementedError(f"Handling for ufunc method {method} is not implemented.")
+        
+    def __repr__(self):
+        return f"Collection({self.elements})"
+    
+    def __add__(self, x):
+        if isinstance(x, Collection):
+            return Collection([s + t for s, t in zip(self.elements, x.elements)])
+        elif isinstance(x, Dual):
+            return Collection([s + x for s in self.elements])
+        else:
+            return Collection([s + x for s in self.elements])
+        
+    def __radd__(self, x):
+        return Collection([s + x for s in self.elements])
+    
+    def __sub__(self, x):
+        if isinstance(x, Collection):
+            return Collection([s - t for s, t in zip(self.elements, x.elements)])
+        elif isinstance(x, Dual):
+            return Collection([s - x for s in self.elements])
+        else:
+            return Collection([s - x for s in self.elements])
+        
+    def __rsub__(self, x):
+        return Collection([x - s for s in self.elements])
+    
+    def __mul__(self, x):
+        if isinstance(x, Collection):
+            return Collection([s * t for s, t in zip(self.elements, x.elements)])
+        elif isinstance(x, Dual):
+            return Collection([s * x for s in self.elements])
+        else:
+            return Collection([s * x for s in self.elements])
+        
+    def __rmul__(self, x):
+        return Collection([s * x for s in self.elements])
+    
+    def __truediv__(self, x):
+        if isinstance(x, Collection):
+            if any(t.real == 0 for t in x.elements):
+                raise ZeroDivisionError("A denominator is zero")
+            return Collection([s / t for s, t in zip(self.elements, x.elements)])
+        elif isinstance(x, Dual):
+            if x.real == 0:
+                raise ZeroDivisionError("Denominator is zero")
+            return Collection([s / x for s in self.elements])
+        else:
+            return Collection([s / x for s in self.elements])
+    
+    def __rtruediv__(self, x):
+        if any(t.real == 0 for t in self.elements):
+            raise ZeroDivisionError("A denominator is zero")
+        return Collection([x/s for s in self.elements])
+    
+    def __floordiv__(self, x):
+        if isinstance(x, Collection):
+            if any(t.real == 0 for t in x.elements):
+                raise ZeroDivisionError("A denominator is zero")
+            return Collection([s // t for s, t in zip(self.elements, x.elements)])
+        elif isinstance(x, Dual):
+            if x.real == 0:
+                raise ZeroDivisionError("Denominator is zero")
+            return Collection([s // x for s in self.elements])
+        else:
+            if x == 0:
+                raise ZeroDivisionError("Denominator is zero")
+            return Collection([s // x for s in self.elements])
+    
+    def __rfloordiv__(self, x):
+        if any(t.real == 0 for t in self.elements):
+            raise ZeroDivisionError("A denominator is zero")
+        return Collection([x // s for s in self.elements])
