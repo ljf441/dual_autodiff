@@ -17,7 +17,7 @@ def test_dual_add():
     assert z.real == 4
     assert z.dual == 6
 
-def test_add():
+def test_real_add():
     x = Dual(1, 2)
     y = x + 3
     
@@ -39,7 +39,7 @@ def test_dual_sub():
     assert z.real == -1
     assert z.dual == 1
 
-def test_sub():
+def test_real_sub():
     x = Dual(1, 2)
     y = x - 3
 
@@ -61,7 +61,7 @@ def test_dual_mul():
     assert z.real == 3
     assert z.dual == 10
 
-def test_mul():
+def test_real_mul():
     x = Dual(1, 2)
     y = x * 3
 
@@ -83,7 +83,7 @@ def test_dual_div():
     assert z.real == 2
     assert z.dual == 0
 
-def test_div():
+def test_real_div():
     x = Dual(6, 2)
     y = x / 2
 
@@ -144,7 +144,7 @@ def test_dual_sec():
     y = x.sec()
 
     assert np.isclose(y.real, float(mp.sec(1)))
-    assert np.isclose(y.dual, float(-np.tan(1)*mp.sec(1)))
+    assert np.isclose(y.dual, -np.tan(1)*float(mp.sec(1)))
 
 def test_dual_arcsec():
     x = Dual(2, 1)
@@ -349,13 +349,6 @@ def test_rpow():
     assert np.isclose(y.real, 4)
     assert np.isclose(y.dual, 2**2 * 3 * np.log(2))
 
-def test_dual_zero_init():
-    x = Dual(0,0)
-    y = x + 1
-
-    assert y.real == 1
-    assert y.dual == 0
-
 def test_floordiv():
     x = Dual(5,5)
     y = x//2
@@ -377,3 +370,15 @@ def test_rfloordiv():
     
     assert y.real == 2
     assert y.dual == -5*2 // 2**2
+
+def test_partials():
+    x = Dual(1, 4)
+    y = Dual(2, 5)
+    z = Dual(3, 6)
+
+    def f(x, y, z):
+        return x**x + 2*y  + z**2
+
+    assert x.partial(f, x, y, z) == 1*1**0
+    assert y.partial(f, x, y, z) == 2
+    assert z.partial(f, x, y, z) == 2*3

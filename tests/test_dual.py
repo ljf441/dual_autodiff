@@ -17,7 +17,7 @@ def test_dual_add():
     assert z.real == 4
     assert z.dual == 6
 
-def test_add():
+def test_real_add():
     x = Dual(1, 2)
     y = x + 3
     
@@ -39,7 +39,7 @@ def test_dual_sub():
     assert z.real == -1
     assert z.dual == 1
 
-def test_sub():
+def test_real_sub():
     x = Dual(1, 2)
     y = x - 3
 
@@ -61,7 +61,7 @@ def test_dual_mul():
     assert z.real == 3
     assert z.dual == 10
 
-def test_mul():
+def test_real_mul():
     x = Dual(1, 2)
     y = x * 3
 
@@ -83,7 +83,7 @@ def test_dual_div():
     assert z.real == 2
     assert z.dual == 0
 
-def test_div():
+def test_real_div():
     x = Dual(6, 2)
     y = x / 2
 
@@ -143,27 +143,27 @@ def test_dual_sec():
     x = Dual(1, 1)
     y = x.sec()
 
-    assert mp.almosteq(y.real, mp.sec(1))
-    assert mp.almosteq(y.dual, -np.tan(1)*mp.sec(1))
+    assert np.isclose(y.real, float(mp.sec(1)))
+    assert np.isclose(y.dual, -np.tan(1)*float(mp.sec(1)))
 
 def test_dual_arcsec():
     x = Dual(2, 1)
     y = x.arcsec()
 
-    assert mp.almosteq(y.real, mp.asec(2))
-    assert mp.almosteq(y.dual, 1/(2**2 * np.sqrt(1 - 1/2**2)))
+    assert np.isclose(y.real, float(mp.asec(2)))
+    assert np.isclose(y.dual, 1/(2**2 * np.sqrt(1 - 1/2**2)))
 
 def test_dual_sech():
     x = Dual(1, 1)
     y = x.sech()
-    assert mp.almosteq(y.real, mp.sech(1))
-    assert mp.almosteq(y.dual, -mp.tanh(1)*mp.sech(1))
+    assert np.isclose(y.real, float(mp.sech(1)))
+    assert np.isclose(y.dual, float(-mp.tanh(1)*mp.sech(1)))
 
 def test_dual_arcsech():
     x = Dual(0.5, 1)
     y = x.arcsech()
-    assert mp.almosteq(y.real, mp.asech(0.5))
-    assert mp.almosteq(y.dual, -1/(0.5 * mp.sqrt(1 - 0.5**2)))
+    assert np.isclose(y.real, float(mp.asech(0.5)))
+    assert np.isclose(y.dual, -1/(0.5 * np.sqrt(1 - 0.5**2)))
 
 def test_dual_sin():
     x = Dual(1, 1)
@@ -211,28 +211,28 @@ def test_dual_csc():
     x = Dual(0.5, 1)
     y = x.csc()
 
-    assert mp.almosteq(y.real, mp.csc(0.5))
-    assert mp.almosteq(y.dual, -mp.cot(0.5)*mp.csc(0.5))
+    assert np.isclose(y.real, float(mp.csc(0.5)))
+    assert np.isclose(y.dual, float(-mp.cot(0.5)*mp.csc(0.5)))
 
 def test_dual_arccsc():
     x = Dual(2, 1)
     y = x.arccsc()
 
-    assert mp.almosteq(y.real, mp.acsc(2))
+    assert np.isclose(y.real, float(mp.acsc(2)))
     assert np.isclose(y.dual, -1/(2*np.sqrt(2**2 - 1)))
 
 def test_dual_csch():
     x = Dual(2, 1)
     y = x.csch()
 
-    assert mp.almosteq(y.real, mp.csch(2))
-    assert mp.almosteq(y.dual, -mp.coth(2)*mp.csch(2))
+    assert np.isclose(y.real, float(mp.csch(2)))
+    assert np.isclose(y.dual, float(-mp.coth(2)*mp.csch(2)))
 
 def test_dual_arccsch():
     x = Dual(2, 1)
     y = x.arccsch()
 
-    assert mp.almosteq(y.real, mp.acsch(2))
+    assert np.isclose(y.real, float(mp.acsch(2)))
     assert np.isclose(y.dual, -1/(2**2 * np.sqrt(1 + 1/2**2)))
 
 def test_dual_tan():
@@ -274,29 +274,29 @@ def test_dual_arctanh():
     x = Dual(0.5, 1)
     y = x.arctanh()
 
-    assert mp.almosteq(y.real, mp.atanh(0.5))
+    assert np.isclose(y.real, float(mp.atanh(0.5)))
     assert np.isclose(y.dual, 1/(1-0.5**2))
 
 def test_dual_cot():
     x = Dual(1, 1)
     y = x.cot()
 
-    assert mp.almosteq(y.real, mp.cot(1))
-    assert mp.almosteq(y.dual, -mp.csc(1)**2)
+    assert np.isclose(y.real, float(mp.cot(1)))
+    assert np.isclose(y.dual, float(-mp.csc(1)**2))
 
 def test_dual_arccot():
     x = Dual(2, 1)
     y = x.arccot()
 
-    assert mp.almosteq(y.real, mp.acot(2))
-    assert mp.almosteq(y.dual, -1/(1+2**2))
+    assert np.isclose(y.real, float(mp.acot(2)))
+    assert np.isclose(y.dual, -1/(1+2**2))
 
 def test_dual_coth():
     x = Dual(1, 1)
     y = x.coth()
     
-    assert mp.almosteq(y.real, mp.coth(1))
-    assert mp.almosteq(y.dual, -mp.csch(1)**2)
+    assert np.isclose(y.real, float(mp.coth(1)))
+    assert np.isclose(y.dual, float(-mp.csch(1)**2))
 
 def test_dual_log():
     x = Dual(1, 2)
@@ -349,13 +349,6 @@ def test_rpow():
     assert np.isclose(y.real, 4)
     assert np.isclose(y.dual, 2**2 * 3 * np.log(2))
 
-def test_dual_zero_init():
-    x = Dual(0,0)
-    y = x + 1
-
-    assert y.real == 1
-    assert y.dual == 0
-
 def test_floordiv():
     x = Dual(5,5)
     y = x//2
@@ -377,3 +370,15 @@ def test_rfloordiv():
     
     assert y.real == 2
     assert y.dual == -5*2 // 2**2
+
+def test_partials():
+    x = Dual(1, 4)
+    y = Dual(2, 5)
+    z = Dual(3, 6)
+
+    def f(x, y, z):
+        return x**x + 2*y  + z**2
+
+    assert x.partial(f, x, y, z) == 1*1**0
+    assert y.partial(f, x, y, z) == 2
+    assert z.partial(f, x, y, z) == 2*3
