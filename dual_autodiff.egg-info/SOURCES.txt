@@ -7,6 +7,8 @@ dual_autodiff.ipynb
 make.bat
 pyproject.toml
 setup.py
+testing.py
+.github/workflows/docker_image_x.yml
 _minted-main/214516E07A5FF4B536CF2B99D7904B7A541C68F80C6A6F06151AFD63BAE50EBC.pygtex
 _minted-main/41BA6587228E5D176EFC2DEBD2AD147D541C68F80C6A6F06151AFD63BAE50EBC.pygtex
 _minted-main/77C9A03BF26EF8B5CFC500AF277905CE541C68F80C6A6F06151AFD63BAE50EBC.pygtex
@@ -34,6 +36,10 @@ dual_autodiff_x/__init__.py
 dual_autodiff_x/pyproject.toml
 dual_autodiff_x/setup.py
 dual_autodiff_x/tox.ini
+dual_autodiff_x/.tox/.package.lock
+dual_autodiff_x/.tox/dist/dual_autodiff_x-0.0.1.zip
+dual_autodiff_x/.tox/log/.lock
+dual_autodiff_x/.tox/log/GLOB-0.log
 dual_autodiff_x/__pycache__/__init__.cpython-312.pyc
 dual_autodiff_x/build/lib.linux-x86_64-cpython-312/dual_autodiff_x.cpython-312-x86_64-linux-gnu.so
 dual_autodiff_x/build/lib.linux-x86_64-cpython-312/dual_autodiff_x/dual.cpython-312-x86_64-linux-gnu.so
@@ -79,7 +85,11 @@ report/_minted-main/default.pygstyle
 source/conf.py
 source/index.rst
 source/tutorial.ipynb
+tests/test_collection.py
+tests/test_collection_x.py
 tests/test_dual.py
 tests/test_dual_x.py
+tests/__pycache__/test_collection.cpython-312-pytest-8.3.3.pyc
+tests/__pycache__/test_collection_x.cpython-312-pytest-8.3.3.pyc
 tests/__pycache__/test_dual.cpython-312-pytest-8.3.3.pyc
 tests/__pycache__/test_dual_x.cpython-312-pytest-8.3.3.pyc

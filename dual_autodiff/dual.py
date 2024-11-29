@@ -24,7 +24,7 @@ class Dual:
 
     def implement(function):
         """
-        Register a function implementatrion for Dual objects.
+        Register a function implementation for Dual objects.
         """
         def decorator(func):
             HANDLED_FUNCTIONS[function] = func
@@ -32,6 +32,9 @@ class Dual:
         return decorator
 
     HANDLED_NUMPY_FUNCTIONS = {
+        """
+        Maps numpy ufunc names to local function implementation names.
+        """
         'acos':'arccos',
         'asin':'arcsin',
         'arctan':'arctan',
@@ -43,6 +46,9 @@ class Dual:
     }
     
     def __array_ufunc__(self, ufunc, method, inputs, *args, **kwargs):
+        """
+        Overrides numpy ufuncs with local implementations instead when used on Dual numbers.
+        """
 
         if isinstance(self, Dual) and method == "__call__":
             ufunc_name = ufunc.__name__
@@ -57,6 +63,9 @@ class Dual:
             return NotImplemented
         
     def __array_function__(self, func, types, args, kwargs):
+        """
+        Indicates whether called function is handled by the Dual class or not. Also makes sure that all items in list are subclasses of Dual.
+        """
         if func not in HANDLED_FUNCTIONS:
             return NotImplemented
         if not all(issubclass(t, self.__class__) for t in types):
@@ -281,6 +290,21 @@ class Dual:
         """
         if isinstance(x, Dual):
             if self.real==x.real and self.dual==x.dual:
+                return True
+            else:
+                return False
+        else:
+            return False
+        
+    def __ne__(self, x):
+        """
+        Checks inequality of Dual numbers.
+
+        Parameters:
+            x (Dual): The other Dual number.
+        """
+        if isinstance(x, Dual):
+            if self.real != x.real or self.dual != x.dual:
                 return True
             else:
                 return False
@@ -667,6 +691,22 @@ class Collection():
                 return b
         else:
             return False
+    
+    def __ne__(self, x):
+        """
+        Checks inequality of Collections.
+
+        Parameters:
+            x (Collection): The other collection.
+        """
+        if isinstance(x, Collection):
+            if len(self.elements) != len(x.elements):
+                return True
+            else:
+                b = all(s != t for s, t in zip(self.elements, x.elements))
+                return b
+        else:
+            return True
 
     def __getitem__(self, idx):
         """
