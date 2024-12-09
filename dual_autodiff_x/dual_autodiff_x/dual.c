@@ -4,7 +4,7 @@
 {
     "distutils": {
         "include_dirs": [
-            "/home/ljf1/dis/disvenv/lib/python3.12/site-packages/numpy/_core/include"
+            "/home/ljf1/dis/test/lib/python3.10/site-packages/numpy/_core/include"
         ],
         "name": "dual_autodiff_x.dual",
         "sources": [
@@ -2084,13 +2084,6 @@ static PyObject *__Pyx_CyFunction_New(PyMethodDef *ml,
                                       PyObject *module, PyObject *globals,
                                       PyObject* code);
 
-/* StrEquals.proto */
-#if PY_MAJOR_VERSION >= 3
-#define __Pyx_PyString_Equals __Pyx_PyUnicode_Equals
-#else
-#define __Pyx_PyString_Equals __Pyx_PyBytes_Equals
-#endif
-
 /* GetAttr.proto */
 static CYTHON_INLINE PyObject *__Pyx_GetAttr(PyObject *, PyObject *);
 
@@ -3065,15 +3058,15 @@ typedef struct {
   PyTypeObject *__pyx_ptype_15dual_autodiff_x_4dual___pyx_scope_struct_6_genexpr;
   PyTypeObject *__pyx_ptype_15dual_autodiff_x_4dual___pyx_scope_struct_7_genexpr;
   PyTypeObject *__pyx_ptype_15dual_autodiff_x_4dual___pyx_scope_struct_8_genexpr;
-  PyObject *__pyx_kp_s_A_Collection_is_meant_to_only_ho;
-  PyObject *__pyx_kp_s_A_denominator_is_zero;
+  PyObject *__pyx_kp_u_A_Collection_is_meant_to_only_ho;
+  PyObject *__pyx_kp_u_A_denominator_is_zero;
   PyObject *__pyx_kp_u_Collection;
   PyObject *__pyx_n_s_Collection_2;
   PyObject *__pyx_n_s_Collection___array_ufunc;
   PyObject *__pyx_n_s_Collection___reduce_cython;
   PyObject *__pyx_n_s_Collection___setstate_cython;
   PyObject *__pyx_n_s_Collection_append;
-  PyObject *__pyx_kp_s_Denominator_is_zero;
+  PyObject *__pyx_kp_u_Denominator_is_zero;
   PyObject *__pyx_n_s_Dual;
   PyObject *__pyx_n_s_Dual___array_function;
   PyObject *__pyx_n_s_Dual___array_ufunc;
@@ -3112,42 +3105,51 @@ typedef struct {
   PyObject *__pyx_kp_u_Handling_for_ufunc_method;
   PyObject *__pyx_kp_s_Incompatible_checksums_0x_x_vs_0;
   PyObject *__pyx_kp_s_Incompatible_checksums_0x_x_vs_0_2;
-  PyObject *__pyx_kp_s_Inverse_cosecant_derivative_unde;
-  PyObject *__pyx_kp_s_Inverse_cosine_undefined_for_x_n;
+  PyObject *__pyx_kp_u_Inverse_cosecant_derivative_unde;
+  PyObject *__pyx_kp_u_Inverse_cosine_undefined_for_x_n;
   PyObject *__pyx_kp_u_Inverse_hyperbolic_cosine_undefi;
-  PyObject *__pyx_kp_s_Inverse_hyperbolic_secant_undefi;
-  PyObject *__pyx_kp_s_Inverse_hyperbolic_tangent_undef;
-  PyObject *__pyx_kp_s_Inverse_secant_undefined_in_rang;
-  PyObject *__pyx_kp_s_Inverse_sine_undefined_for_x_not;
+  PyObject *__pyx_kp_u_Inverse_hyperbolic_secant_undefi;
+  PyObject *__pyx_kp_u_Inverse_hyperbolic_tangent_undef;
+  PyObject *__pyx_kp_u_Inverse_secant_undefined_in_rang;
+  PyObject *__pyx_kp_u_Inverse_sine_undefined_for_x_not;
   PyObject *__pyx_kp_u_Inverse_tangent_only_defined_wit;
-  PyObject *__pyx_kp_s_Logarithm_is_undefined_for_non_p;
+  PyObject *__pyx_kp_u_Logarithm_is_undefined_for_non_p;
   PyObject *__pyx_n_s_NotImplemented;
   PyObject *__pyx_n_s_NotImplementedError;
   PyObject *__pyx_n_s_PickleError;
-  PyObject *__pyx_kp_s_This_method_is_only_defined_for;
+  PyObject *__pyx_kp_u_This_method_is_only_defined_for;
   PyObject *__pyx_n_s_ZeroDivisionError;
   PyObject *__pyx_kp_u__20;
   PyObject *__pyx_n_s__22;
   PyObject *__pyx_kp_u__4;
   PyObject *__pyx_n_s__70;
   PyObject *__pyx_n_s_abs;
-  PyObject *__pyx_n_s_acos;
-  PyObject *__pyx_n_s_acosh;
+  PyObject *__pyx_n_u_acos;
+  PyObject *__pyx_n_u_acosh;
   PyObject *__pyx_n_s_acot;
   PyObject *__pyx_n_s_acsc;
   PyObject *__pyx_n_s_acsch;
+  PyObject *__pyx_n_u_acsch;
   PyObject *__pyx_n_s_append;
   PyObject *__pyx_n_s_arccos;
+  PyObject *__pyx_n_u_arccos;
   PyObject *__pyx_n_s_arccosh;
+  PyObject *__pyx_n_u_arccosh;
   PyObject *__pyx_n_s_arccot;
   PyObject *__pyx_n_s_arccsc;
   PyObject *__pyx_n_s_arccsch;
+  PyObject *__pyx_n_u_arccsch;
   PyObject *__pyx_n_s_arcsec;
   PyObject *__pyx_n_s_arcsech;
+  PyObject *__pyx_n_u_arcsech;
   PyObject *__pyx_n_s_arcsin;
+  PyObject *__pyx_n_u_arcsin;
   PyObject *__pyx_n_s_arcsinh;
+  PyObject *__pyx_n_u_arcsinh;
   PyObject *__pyx_n_s_arctan;
+  PyObject *__pyx_n_u_arctan;
   PyObject *__pyx_n_s_arctanh;
+  PyObject *__pyx_n_u_arctanh;
   PyObject *__pyx_n_s_arg;
   PyObject *__pyx_n_s_args;
   PyObject *__pyx_n_s_array_function;
@@ -3155,11 +3157,12 @@ typedef struct {
   PyObject *__pyx_n_s_array_ufunc;
   PyObject *__pyx_n_s_asec;
   PyObject *__pyx_n_s_asech;
-  PyObject *__pyx_n_s_asin;
-  PyObject *__pyx_n_s_asinh;
+  PyObject *__pyx_n_u_asech;
+  PyObject *__pyx_n_u_asin;
+  PyObject *__pyx_n_u_asinh;
   PyObject *__pyx_n_s_asyncio_coroutines;
-  PyObject *__pyx_n_s_atanh;
-  PyObject *__pyx_n_s_call;
+  PyObject *__pyx_n_u_atanh;
+  PyObject *__pyx_n_u_call;
   PyObject *__pyx_n_s_class;
   PyObject *__pyx_n_s_class_getitem;
   PyObject *__pyx_n_s_cline_in_traceback;
@@ -3390,15 +3393,15 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_type_15dual_autodiff_x_4dual___pyx_scope_struct_7_genexpr);
   Py_CLEAR(clear_module_state->__pyx_ptype_15dual_autodiff_x_4dual___pyx_scope_struct_8_genexpr);
   Py_CLEAR(clear_module_state->__pyx_type_15dual_autodiff_x_4dual___pyx_scope_struct_8_genexpr);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_A_Collection_is_meant_to_only_ho);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_A_denominator_is_zero);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_A_Collection_is_meant_to_only_ho);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_A_denominator_is_zero);
   Py_CLEAR(clear_module_state->__pyx_kp_u_Collection);
   Py_CLEAR(clear_module_state->__pyx_n_s_Collection_2);
   Py_CLEAR(clear_module_state->__pyx_n_s_Collection___array_ufunc);
   Py_CLEAR(clear_module_state->__pyx_n_s_Collection___reduce_cython);
   Py_CLEAR(clear_module_state->__pyx_n_s_Collection___setstate_cython);
   Py_CLEAR(clear_module_state->__pyx_n_s_Collection_append);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_Denominator_is_zero);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_Denominator_is_zero);
   Py_CLEAR(clear_module_state->__pyx_n_s_Dual);
   Py_CLEAR(clear_module_state->__pyx_n_s_Dual___array_function);
   Py_CLEAR(clear_module_state->__pyx_n_s_Dual___array_ufunc);
@@ -3437,42 +3440,51 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_kp_u_Handling_for_ufunc_method);
   Py_CLEAR(clear_module_state->__pyx_kp_s_Incompatible_checksums_0x_x_vs_0);
   Py_CLEAR(clear_module_state->__pyx_kp_s_Incompatible_checksums_0x_x_vs_0_2);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_Inverse_cosecant_derivative_unde);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_Inverse_cosine_undefined_for_x_n);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_Inverse_cosecant_derivative_unde);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_Inverse_cosine_undefined_for_x_n);
   Py_CLEAR(clear_module_state->__pyx_kp_u_Inverse_hyperbolic_cosine_undefi);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_Inverse_hyperbolic_secant_undefi);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_Inverse_hyperbolic_tangent_undef);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_Inverse_secant_undefined_in_rang);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_Inverse_sine_undefined_for_x_not);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_Inverse_hyperbolic_secant_undefi);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_Inverse_hyperbolic_tangent_undef);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_Inverse_secant_undefined_in_rang);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_Inverse_sine_undefined_for_x_not);
   Py_CLEAR(clear_module_state->__pyx_kp_u_Inverse_tangent_only_defined_wit);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_Logarithm_is_undefined_for_non_p);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_Logarithm_is_undefined_for_non_p);
   Py_CLEAR(clear_module_state->__pyx_n_s_NotImplemented);
   Py_CLEAR(clear_module_state->__pyx_n_s_NotImplementedError);
   Py_CLEAR(clear_module_state->__pyx_n_s_PickleError);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_This_method_is_only_defined_for);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_This_method_is_only_defined_for);
   Py_CLEAR(clear_module_state->__pyx_n_s_ZeroDivisionError);
   Py_CLEAR(clear_module_state->__pyx_kp_u__20);
   Py_CLEAR(clear_module_state->__pyx_n_s__22);
   Py_CLEAR(clear_module_state->__pyx_kp_u__4);
   Py_CLEAR(clear_module_state->__pyx_n_s__70);
   Py_CLEAR(clear_module_state->__pyx_n_s_abs);
-  Py_CLEAR(clear_module_state->__pyx_n_s_acos);
-  Py_CLEAR(clear_module_state->__pyx_n_s_acosh);
+  Py_CLEAR(clear_module_state->__pyx_n_u_acos);
+  Py_CLEAR(clear_module_state->__pyx_n_u_acosh);
   Py_CLEAR(clear_module_state->__pyx_n_s_acot);
   Py_CLEAR(clear_module_state->__pyx_n_s_acsc);
   Py_CLEAR(clear_module_state->__pyx_n_s_acsch);
+  Py_CLEAR(clear_module_state->__pyx_n_u_acsch);
   Py_CLEAR(clear_module_state->__pyx_n_s_append);
   Py_CLEAR(clear_module_state->__pyx_n_s_arccos);
+  Py_CLEAR(clear_module_state->__pyx_n_u_arccos);
   Py_CLEAR(clear_module_state->__pyx_n_s_arccosh);
+  Py_CLEAR(clear_module_state->__pyx_n_u_arccosh);
   Py_CLEAR(clear_module_state->__pyx_n_s_arccot);
   Py_CLEAR(clear_module_state->__pyx_n_s_arccsc);
   Py_CLEAR(clear_module_state->__pyx_n_s_arccsch);
+  Py_CLEAR(clear_module_state->__pyx_n_u_arccsch);
   Py_CLEAR(clear_module_state->__pyx_n_s_arcsec);
   Py_CLEAR(clear_module_state->__pyx_n_s_arcsech);
+  Py_CLEAR(clear_module_state->__pyx_n_u_arcsech);
   Py_CLEAR(clear_module_state->__pyx_n_s_arcsin);
+  Py_CLEAR(clear_module_state->__pyx_n_u_arcsin);
   Py_CLEAR(clear_module_state->__pyx_n_s_arcsinh);
+  Py_CLEAR(clear_module_state->__pyx_n_u_arcsinh);
   Py_CLEAR(clear_module_state->__pyx_n_s_arctan);
+  Py_CLEAR(clear_module_state->__pyx_n_u_arctan);
   Py_CLEAR(clear_module_state->__pyx_n_s_arctanh);
+  Py_CLEAR(clear_module_state->__pyx_n_u_arctanh);
   Py_CLEAR(clear_module_state->__pyx_n_s_arg);
   Py_CLEAR(clear_module_state->__pyx_n_s_args);
   Py_CLEAR(clear_module_state->__pyx_n_s_array_function);
@@ -3480,11 +3492,12 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_array_ufunc);
   Py_CLEAR(clear_module_state->__pyx_n_s_asec);
   Py_CLEAR(clear_module_state->__pyx_n_s_asech);
-  Py_CLEAR(clear_module_state->__pyx_n_s_asin);
-  Py_CLEAR(clear_module_state->__pyx_n_s_asinh);
+  Py_CLEAR(clear_module_state->__pyx_n_u_asech);
+  Py_CLEAR(clear_module_state->__pyx_n_u_asin);
+  Py_CLEAR(clear_module_state->__pyx_n_u_asinh);
   Py_CLEAR(clear_module_state->__pyx_n_s_asyncio_coroutines);
-  Py_CLEAR(clear_module_state->__pyx_n_s_atanh);
-  Py_CLEAR(clear_module_state->__pyx_n_s_call);
+  Py_CLEAR(clear_module_state->__pyx_n_u_atanh);
+  Py_CLEAR(clear_module_state->__pyx_n_u_call);
   Py_CLEAR(clear_module_state->__pyx_n_s_class);
   Py_CLEAR(clear_module_state->__pyx_n_s_class_getitem);
   Py_CLEAR(clear_module_state->__pyx_n_s_cline_in_traceback);
@@ -3693,15 +3706,15 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_type_15dual_autodiff_x_4dual___pyx_scope_struct_7_genexpr);
   Py_VISIT(traverse_module_state->__pyx_ptype_15dual_autodiff_x_4dual___pyx_scope_struct_8_genexpr);
   Py_VISIT(traverse_module_state->__pyx_type_15dual_autodiff_x_4dual___pyx_scope_struct_8_genexpr);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_A_Collection_is_meant_to_only_ho);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_A_denominator_is_zero);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_A_Collection_is_meant_to_only_ho);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_A_denominator_is_zero);
   Py_VISIT(traverse_module_state->__pyx_kp_u_Collection);
   Py_VISIT(traverse_module_state->__pyx_n_s_Collection_2);
   Py_VISIT(traverse_module_state->__pyx_n_s_Collection___array_ufunc);
   Py_VISIT(traverse_module_state->__pyx_n_s_Collection___reduce_cython);
   Py_VISIT(traverse_module_state->__pyx_n_s_Collection___setstate_cython);
   Py_VISIT(traverse_module_state->__pyx_n_s_Collection_append);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_Denominator_is_zero);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_Denominator_is_zero);
   Py_VISIT(traverse_module_state->__pyx_n_s_Dual);
   Py_VISIT(traverse_module_state->__pyx_n_s_Dual___array_function);
   Py_VISIT(traverse_module_state->__pyx_n_s_Dual___array_ufunc);
@@ -3740,42 +3753,51 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_kp_u_Handling_for_ufunc_method);
   Py_VISIT(traverse_module_state->__pyx_kp_s_Incompatible_checksums_0x_x_vs_0);
   Py_VISIT(traverse_module_state->__pyx_kp_s_Incompatible_checksums_0x_x_vs_0_2);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_Inverse_cosecant_derivative_unde);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_Inverse_cosine_undefined_for_x_n);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_Inverse_cosecant_derivative_unde);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_Inverse_cosine_undefined_for_x_n);
   Py_VISIT(traverse_module_state->__pyx_kp_u_Inverse_hyperbolic_cosine_undefi);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_Inverse_hyperbolic_secant_undefi);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_Inverse_hyperbolic_tangent_undef);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_Inverse_secant_undefined_in_rang);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_Inverse_sine_undefined_for_x_not);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_Inverse_hyperbolic_secant_undefi);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_Inverse_hyperbolic_tangent_undef);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_Inverse_secant_undefined_in_rang);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_Inverse_sine_undefined_for_x_not);
   Py_VISIT(traverse_module_state->__pyx_kp_u_Inverse_tangent_only_defined_wit);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_Logarithm_is_undefined_for_non_p);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_Logarithm_is_undefined_for_non_p);
   Py_VISIT(traverse_module_state->__pyx_n_s_NotImplemented);
   Py_VISIT(traverse_module_state->__pyx_n_s_NotImplementedError);
   Py_VISIT(traverse_module_state->__pyx_n_s_PickleError);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_This_method_is_only_defined_for);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_This_method_is_only_defined_for);
   Py_VISIT(traverse_module_state->__pyx_n_s_ZeroDivisionError);
   Py_VISIT(traverse_module_state->__pyx_kp_u__20);
   Py_VISIT(traverse_module_state->__pyx_n_s__22);
   Py_VISIT(traverse_module_state->__pyx_kp_u__4);
   Py_VISIT(traverse_module_state->__pyx_n_s__70);
   Py_VISIT(traverse_module_state->__pyx_n_s_abs);
-  Py_VISIT(traverse_module_state->__pyx_n_s_acos);
-  Py_VISIT(traverse_module_state->__pyx_n_s_acosh);
+  Py_VISIT(traverse_module_state->__pyx_n_u_acos);
+  Py_VISIT(traverse_module_state->__pyx_n_u_acosh);
   Py_VISIT(traverse_module_state->__pyx_n_s_acot);
   Py_VISIT(traverse_module_state->__pyx_n_s_acsc);
   Py_VISIT(traverse_module_state->__pyx_n_s_acsch);
+  Py_VISIT(traverse_module_state->__pyx_n_u_acsch);
   Py_VISIT(traverse_module_state->__pyx_n_s_append);
   Py_VISIT(traverse_module_state->__pyx_n_s_arccos);
+  Py_VISIT(traverse_module_state->__pyx_n_u_arccos);
   Py_VISIT(traverse_module_state->__pyx_n_s_arccosh);
+  Py_VISIT(traverse_module_state->__pyx_n_u_arccosh);
   Py_VISIT(traverse_module_state->__pyx_n_s_arccot);
   Py_VISIT(traverse_module_state->__pyx_n_s_arccsc);
   Py_VISIT(traverse_module_state->__pyx_n_s_arccsch);
+  Py_VISIT(traverse_module_state->__pyx_n_u_arccsch);
   Py_VISIT(traverse_module_state->__pyx_n_s_arcsec);
   Py_VISIT(traverse_module_state->__pyx_n_s_arcsech);
+  Py_VISIT(traverse_module_state->__pyx_n_u_arcsech);
   Py_VISIT(traverse_module_state->__pyx_n_s_arcsin);
+  Py_VISIT(traverse_module_state->__pyx_n_u_arcsin);
   Py_VISIT(traverse_module_state->__pyx_n_s_arcsinh);
+  Py_VISIT(traverse_module_state->__pyx_n_u_arcsinh);
   Py_VISIT(traverse_module_state->__pyx_n_s_arctan);
+  Py_VISIT(traverse_module_state->__pyx_n_u_arctan);
   Py_VISIT(traverse_module_state->__pyx_n_s_arctanh);
+  Py_VISIT(traverse_module_state->__pyx_n_u_arctanh);
   Py_VISIT(traverse_module_state->__pyx_n_s_arg);
   Py_VISIT(traverse_module_state->__pyx_n_s_args);
   Py_VISIT(traverse_module_state->__pyx_n_s_array_function);
@@ -3783,11 +3805,12 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_array_ufunc);
   Py_VISIT(traverse_module_state->__pyx_n_s_asec);
   Py_VISIT(traverse_module_state->__pyx_n_s_asech);
-  Py_VISIT(traverse_module_state->__pyx_n_s_asin);
-  Py_VISIT(traverse_module_state->__pyx_n_s_asinh);
+  Py_VISIT(traverse_module_state->__pyx_n_u_asech);
+  Py_VISIT(traverse_module_state->__pyx_n_u_asin);
+  Py_VISIT(traverse_module_state->__pyx_n_u_asinh);
   Py_VISIT(traverse_module_state->__pyx_n_s_asyncio_coroutines);
-  Py_VISIT(traverse_module_state->__pyx_n_s_atanh);
-  Py_VISIT(traverse_module_state->__pyx_n_s_call);
+  Py_VISIT(traverse_module_state->__pyx_n_u_atanh);
+  Py_VISIT(traverse_module_state->__pyx_n_u_call);
   Py_VISIT(traverse_module_state->__pyx_n_s_class);
   Py_VISIT(traverse_module_state->__pyx_n_s_class_getitem);
   Py_VISIT(traverse_module_state->__pyx_n_s_cline_in_traceback);
@@ -4008,15 +4031,15 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_ptype_15dual_autodiff_x_4dual___pyx_scope_struct_6_genexpr __pyx_mstate_global->__pyx_ptype_15dual_autodiff_x_4dual___pyx_scope_struct_6_genexpr
 #define __pyx_ptype_15dual_autodiff_x_4dual___pyx_scope_struct_7_genexpr __pyx_mstate_global->__pyx_ptype_15dual_autodiff_x_4dual___pyx_scope_struct_7_genexpr
 #define __pyx_ptype_15dual_autodiff_x_4dual___pyx_scope_struct_8_genexpr __pyx_mstate_global->__pyx_ptype_15dual_autodiff_x_4dual___pyx_scope_struct_8_genexpr
-#define __pyx_kp_s_A_Collection_is_meant_to_only_ho __pyx_mstate_global->__pyx_kp_s_A_Collection_is_meant_to_only_ho
-#define __pyx_kp_s_A_denominator_is_zero __pyx_mstate_global->__pyx_kp_s_A_denominator_is_zero
+#define __pyx_kp_u_A_Collection_is_meant_to_only_ho __pyx_mstate_global->__pyx_kp_u_A_Collection_is_meant_to_only_ho
+#define __pyx_kp_u_A_denominator_is_zero __pyx_mstate_global->__pyx_kp_u_A_denominator_is_zero
 #define __pyx_kp_u_Collection __pyx_mstate_global->__pyx_kp_u_Collection
 #define __pyx_n_s_Collection_2 __pyx_mstate_global->__pyx_n_s_Collection_2
 #define __pyx_n_s_Collection___array_ufunc __pyx_mstate_global->__pyx_n_s_Collection___array_ufunc
 #define __pyx_n_s_Collection___reduce_cython __pyx_mstate_global->__pyx_n_s_Collection___reduce_cython
 #define __pyx_n_s_Collection___setstate_cython __pyx_mstate_global->__pyx_n_s_Collection___setstate_cython
 #define __pyx_n_s_Collection_append __pyx_mstate_global->__pyx_n_s_Collection_append
-#define __pyx_kp_s_Denominator_is_zero __pyx_mstate_global->__pyx_kp_s_Denominator_is_zero
+#define __pyx_kp_u_Denominator_is_zero __pyx_mstate_global->__pyx_kp_u_Denominator_is_zero
 #define __pyx_n_s_Dual __pyx_mstate_global->__pyx_n_s_Dual
 #define __pyx_n_s_Dual___array_function __pyx_mstate_global->__pyx_n_s_Dual___array_function
 #define __pyx_n_s_Dual___array_ufunc __pyx_mstate_global->__pyx_n_s_Dual___array_ufunc
@@ -4055,42 +4078,51 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_kp_u_Handling_for_ufunc_method __pyx_mstate_global->__pyx_kp_u_Handling_for_ufunc_method
 #define __pyx_kp_s_Incompatible_checksums_0x_x_vs_0 __pyx_mstate_global->__pyx_kp_s_Incompatible_checksums_0x_x_vs_0
 #define __pyx_kp_s_Incompatible_checksums_0x_x_vs_0_2 __pyx_mstate_global->__pyx_kp_s_Incompatible_checksums_0x_x_vs_0_2
-#define __pyx_kp_s_Inverse_cosecant_derivative_unde __pyx_mstate_global->__pyx_kp_s_Inverse_cosecant_derivative_unde
-#define __pyx_kp_s_Inverse_cosine_undefined_for_x_n __pyx_mstate_global->__pyx_kp_s_Inverse_cosine_undefined_for_x_n
+#define __pyx_kp_u_Inverse_cosecant_derivative_unde __pyx_mstate_global->__pyx_kp_u_Inverse_cosecant_derivative_unde
+#define __pyx_kp_u_Inverse_cosine_undefined_for_x_n __pyx_mstate_global->__pyx_kp_u_Inverse_cosine_undefined_for_x_n
 #define __pyx_kp_u_Inverse_hyperbolic_cosine_undefi __pyx_mstate_global->__pyx_kp_u_Inverse_hyperbolic_cosine_undefi
-#define __pyx_kp_s_Inverse_hyperbolic_secant_undefi __pyx_mstate_global->__pyx_kp_s_Inverse_hyperbolic_secant_undefi
-#define __pyx_kp_s_Inverse_hyperbolic_tangent_undef __pyx_mstate_global->__pyx_kp_s_Inverse_hyperbolic_tangent_undef
-#define __pyx_kp_s_Inverse_secant_undefined_in_rang __pyx_mstate_global->__pyx_kp_s_Inverse_secant_undefined_in_rang
-#define __pyx_kp_s_Inverse_sine_undefined_for_x_not __pyx_mstate_global->__pyx_kp_s_Inverse_sine_undefined_for_x_not
+#define __pyx_kp_u_Inverse_hyperbolic_secant_undefi __pyx_mstate_global->__pyx_kp_u_Inverse_hyperbolic_secant_undefi
+#define __pyx_kp_u_Inverse_hyperbolic_tangent_undef __pyx_mstate_global->__pyx_kp_u_Inverse_hyperbolic_tangent_undef
+#define __pyx_kp_u_Inverse_secant_undefined_in_rang __pyx_mstate_global->__pyx_kp_u_Inverse_secant_undefined_in_rang
+#define __pyx_kp_u_Inverse_sine_undefined_for_x_not __pyx_mstate_global->__pyx_kp_u_Inverse_sine_undefined_for_x_not
 #define __pyx_kp_u_Inverse_tangent_only_defined_wit __pyx_mstate_global->__pyx_kp_u_Inverse_tangent_only_defined_wit
-#define __pyx_kp_s_Logarithm_is_undefined_for_non_p __pyx_mstate_global->__pyx_kp_s_Logarithm_is_undefined_for_non_p
+#define __pyx_kp_u_Logarithm_is_undefined_for_non_p __pyx_mstate_global->__pyx_kp_u_Logarithm_is_undefined_for_non_p
 #define __pyx_n_s_NotImplemented __pyx_mstate_global->__pyx_n_s_NotImplemented
 #define __pyx_n_s_NotImplementedError __pyx_mstate_global->__pyx_n_s_NotImplementedError
 #define __pyx_n_s_PickleError __pyx_mstate_global->__pyx_n_s_PickleError
-#define __pyx_kp_s_This_method_is_only_defined_for __pyx_mstate_global->__pyx_kp_s_This_method_is_only_defined_for
+#define __pyx_kp_u_This_method_is_only_defined_for __pyx_mstate_global->__pyx_kp_u_This_method_is_only_defined_for
 #define __pyx_n_s_ZeroDivisionError __pyx_mstate_global->__pyx_n_s_ZeroDivisionError
 #define __pyx_kp_u__20 __pyx_mstate_global->__pyx_kp_u__20
 #define __pyx_n_s__22 __pyx_mstate_global->__pyx_n_s__22
 #define __pyx_kp_u__4 __pyx_mstate_global->__pyx_kp_u__4
 #define __pyx_n_s__70 __pyx_mstate_global->__pyx_n_s__70
 #define __pyx_n_s_abs __pyx_mstate_global->__pyx_n_s_abs
-#define __pyx_n_s_acos __pyx_mstate_global->__pyx_n_s_acos
-#define __pyx_n_s_acosh __pyx_mstate_global->__pyx_n_s_acosh
+#define __pyx_n_u_acos __pyx_mstate_global->__pyx_n_u_acos
+#define __pyx_n_u_acosh __pyx_mstate_global->__pyx_n_u_acosh
 #define __pyx_n_s_acot __pyx_mstate_global->__pyx_n_s_acot
 #define __pyx_n_s_acsc __pyx_mstate_global->__pyx_n_s_acsc
 #define __pyx_n_s_acsch __pyx_mstate_global->__pyx_n_s_acsch
+#define __pyx_n_u_acsch __pyx_mstate_global->__pyx_n_u_acsch
 #define __pyx_n_s_append __pyx_mstate_global->__pyx_n_s_append
 #define __pyx_n_s_arccos __pyx_mstate_global->__pyx_n_s_arccos
+#define __pyx_n_u_arccos __pyx_mstate_global->__pyx_n_u_arccos
 #define __pyx_n_s_arccosh __pyx_mstate_global->__pyx_n_s_arccosh
+#define __pyx_n_u_arccosh __pyx_mstate_global->__pyx_n_u_arccosh
 #define __pyx_n_s_arccot __pyx_mstate_global->__pyx_n_s_arccot
 #define __pyx_n_s_arccsc __pyx_mstate_global->__pyx_n_s_arccsc
 #define __pyx_n_s_arccsch __pyx_mstate_global->__pyx_n_s_arccsch
+#define __pyx_n_u_arccsch __pyx_mstate_global->__pyx_n_u_arccsch
 #define __pyx_n_s_arcsec __pyx_mstate_global->__pyx_n_s_arcsec
 #define __pyx_n_s_arcsech __pyx_mstate_global->__pyx_n_s_arcsech
+#define __pyx_n_u_arcsech __pyx_mstate_global->__pyx_n_u_arcsech
 #define __pyx_n_s_arcsin __pyx_mstate_global->__pyx_n_s_arcsin
+#define __pyx_n_u_arcsin __pyx_mstate_global->__pyx_n_u_arcsin
 #define __pyx_n_s_arcsinh __pyx_mstate_global->__pyx_n_s_arcsinh
+#define __pyx_n_u_arcsinh __pyx_mstate_global->__pyx_n_u_arcsinh
 #define __pyx_n_s_arctan __pyx_mstate_global->__pyx_n_s_arctan
+#define __pyx_n_u_arctan __pyx_mstate_global->__pyx_n_u_arctan
 #define __pyx_n_s_arctanh __pyx_mstate_global->__pyx_n_s_arctanh
+#define __pyx_n_u_arctanh __pyx_mstate_global->__pyx_n_u_arctanh
 #define __pyx_n_s_arg __pyx_mstate_global->__pyx_n_s_arg
 #define __pyx_n_s_args __pyx_mstate_global->__pyx_n_s_args
 #define __pyx_n_s_array_function __pyx_mstate_global->__pyx_n_s_array_function
@@ -4098,11 +4130,12 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_array_ufunc __pyx_mstate_global->__pyx_n_s_array_ufunc
 #define __pyx_n_s_asec __pyx_mstate_global->__pyx_n_s_asec
 #define __pyx_n_s_asech __pyx_mstate_global->__pyx_n_s_asech
-#define __pyx_n_s_asin __pyx_mstate_global->__pyx_n_s_asin
-#define __pyx_n_s_asinh __pyx_mstate_global->__pyx_n_s_asinh
+#define __pyx_n_u_asech __pyx_mstate_global->__pyx_n_u_asech
+#define __pyx_n_u_asin __pyx_mstate_global->__pyx_n_u_asin
+#define __pyx_n_u_asinh __pyx_mstate_global->__pyx_n_u_asinh
 #define __pyx_n_s_asyncio_coroutines __pyx_mstate_global->__pyx_n_s_asyncio_coroutines
-#define __pyx_n_s_atanh __pyx_mstate_global->__pyx_n_s_atanh
-#define __pyx_n_s_call __pyx_mstate_global->__pyx_n_s_call
+#define __pyx_n_u_atanh __pyx_mstate_global->__pyx_n_u_atanh
+#define __pyx_n_u_call __pyx_mstate_global->__pyx_n_u_call
 #define __pyx_n_s_class __pyx_mstate_global->__pyx_n_s_class
 #define __pyx_n_s_class_getitem __pyx_mstate_global->__pyx_n_s_class_getitem
 #define __pyx_n_s_cline_in_traceback __pyx_mstate_global->__pyx_n_s_cline_in_traceback
@@ -4888,7 +4921,7 @@ static PyObject *__pyx_pf_15dual_autodiff_x_4dual_4Dual_4__array_ufunc__(struct 
     __pyx_t_1 = __pyx_t_2;
     goto __pyx_L4_bool_binop_done;
   }
-  __pyx_t_2 = (__Pyx_PyString_Equals(__pyx_v_method, __pyx_n_s_call, Py_EQ)); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 50, __pyx_L1_error)
+  __pyx_t_2 = (__Pyx_PyUnicode_Equals(__pyx_v_method, __pyx_n_u_call, Py_EQ)); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 50, __pyx_L1_error)
   __pyx_t_1 = __pyx_t_2;
   __pyx_L4_bool_binop_done:;
   if (__pyx_t_1) {
@@ -15241,7 +15274,7 @@ static PyObject *__pyx_pf_15dual_autodiff_x_4dual_10Collection_4__array_ufunc__(
  *             return Collection([ufunc(element) for element in self.elements])
  *         raise NotImplementedError(f"Handling for ufunc method {method} is not implemented.")
  */
-  __pyx_t_1 = (__Pyx_PyString_Equals(__pyx_v_method, __pyx_n_s_call, Py_EQ)); if (unlikely((__pyx_t_1 < 0))) __PYX_ERR(0, 641, __pyx_L1_error)
+  __pyx_t_1 = (__Pyx_PyUnicode_Equals(__pyx_v_method, __pyx_n_u_call, Py_EQ)); if (unlikely((__pyx_t_1 < 0))) __PYX_ERR(0, 641, __pyx_L1_error)
   if (__pyx_t_1) {
 
     /* "dual_autodiff_x/dual.pyx":642
@@ -23924,15 +23957,15 @@ static PyMethodDef __pyx_methods[] = {
 
 static int __Pyx_CreateStringTabAndInitStrings(void) {
   __Pyx_StringTabEntry __pyx_string_tab[] = {
-    {&__pyx_kp_s_A_Collection_is_meant_to_only_ho, __pyx_k_A_Collection_is_meant_to_only_ho, sizeof(__pyx_k_A_Collection_is_meant_to_only_ho), 0, 0, 1, 0},
-    {&__pyx_kp_s_A_denominator_is_zero, __pyx_k_A_denominator_is_zero, sizeof(__pyx_k_A_denominator_is_zero), 0, 0, 1, 0},
+    {&__pyx_kp_u_A_Collection_is_meant_to_only_ho, __pyx_k_A_Collection_is_meant_to_only_ho, sizeof(__pyx_k_A_Collection_is_meant_to_only_ho), 0, 1, 0, 0},
+    {&__pyx_kp_u_A_denominator_is_zero, __pyx_k_A_denominator_is_zero, sizeof(__pyx_k_A_denominator_is_zero), 0, 1, 0, 0},
     {&__pyx_kp_u_Collection, __pyx_k_Collection, sizeof(__pyx_k_Collection), 0, 1, 0, 0},
     {&__pyx_n_s_Collection_2, __pyx_k_Collection_2, sizeof(__pyx_k_Collection_2), 0, 0, 1, 1},
     {&__pyx_n_s_Collection___array_ufunc, __pyx_k_Collection___array_ufunc, sizeof(__pyx_k_Collection___array_ufunc), 0, 0, 1, 1},
     {&__pyx_n_s_Collection___reduce_cython, __pyx_k_Collection___reduce_cython, sizeof(__pyx_k_Collection___reduce_cython), 0, 0, 1, 1},
     {&__pyx_n_s_Collection___setstate_cython, __pyx_k_Collection___setstate_cython, sizeof(__pyx_k_Collection___setstate_cython), 0, 0, 1, 1},
     {&__pyx_n_s_Collection_append, __pyx_k_Collection_append, sizeof(__pyx_k_Collection_append), 0, 0, 1, 1},
-    {&__pyx_kp_s_Denominator_is_zero, __pyx_k_Denominator_is_zero, sizeof(__pyx_k_Denominator_is_zero), 0, 0, 1, 0},
+    {&__pyx_kp_u_Denominator_is_zero, __pyx_k_Denominator_is_zero, sizeof(__pyx_k_Denominator_is_zero), 0, 1, 0, 0},
     {&__pyx_n_s_Dual, __pyx_k_Dual, sizeof(__pyx_k_Dual), 0, 0, 1, 1},
     {&__pyx_n_s_Dual___array_function, __pyx_k_Dual___array_function, sizeof(__pyx_k_Dual___array_function), 0, 0, 1, 1},
     {&__pyx_n_s_Dual___array_ufunc, __pyx_k_Dual___array_ufunc, sizeof(__pyx_k_Dual___array_ufunc), 0, 0, 1, 1},
@@ -23971,42 +24004,51 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_kp_u_Handling_for_ufunc_method, __pyx_k_Handling_for_ufunc_method, sizeof(__pyx_k_Handling_for_ufunc_method), 0, 1, 0, 0},
     {&__pyx_kp_s_Incompatible_checksums_0x_x_vs_0, __pyx_k_Incompatible_checksums_0x_x_vs_0, sizeof(__pyx_k_Incompatible_checksums_0x_x_vs_0), 0, 0, 1, 0},
     {&__pyx_kp_s_Incompatible_checksums_0x_x_vs_0_2, __pyx_k_Incompatible_checksums_0x_x_vs_0_2, sizeof(__pyx_k_Incompatible_checksums_0x_x_vs_0_2), 0, 0, 1, 0},
-    {&__pyx_kp_s_Inverse_cosecant_derivative_unde, __pyx_k_Inverse_cosecant_derivative_unde, sizeof(__pyx_k_Inverse_cosecant_derivative_unde), 0, 0, 1, 0},
-    {&__pyx_kp_s_Inverse_cosine_undefined_for_x_n, __pyx_k_Inverse_cosine_undefined_for_x_n, sizeof(__pyx_k_Inverse_cosine_undefined_for_x_n), 0, 0, 1, 0},
+    {&__pyx_kp_u_Inverse_cosecant_derivative_unde, __pyx_k_Inverse_cosecant_derivative_unde, sizeof(__pyx_k_Inverse_cosecant_derivative_unde), 0, 1, 0, 0},
+    {&__pyx_kp_u_Inverse_cosine_undefined_for_x_n, __pyx_k_Inverse_cosine_undefined_for_x_n, sizeof(__pyx_k_Inverse_cosine_undefined_for_x_n), 0, 1, 0, 0},
     {&__pyx_kp_u_Inverse_hyperbolic_cosine_undefi, __pyx_k_Inverse_hyperbolic_cosine_undefi, sizeof(__pyx_k_Inverse_hyperbolic_cosine_undefi), 0, 1, 0, 0},
-    {&__pyx_kp_s_Inverse_hyperbolic_secant_undefi, __pyx_k_Inverse_hyperbolic_secant_undefi, sizeof(__pyx_k_Inverse_hyperbolic_secant_undefi), 0, 0, 1, 0},
-    {&__pyx_kp_s_Inverse_hyperbolic_tangent_undef, __pyx_k_Inverse_hyperbolic_tangent_undef, sizeof(__pyx_k_Inverse_hyperbolic_tangent_undef), 0, 0, 1, 0},
-    {&__pyx_kp_s_Inverse_secant_undefined_in_rang, __pyx_k_Inverse_secant_undefined_in_rang, sizeof(__pyx_k_Inverse_secant_undefined_in_rang), 0, 0, 1, 0},
-    {&__pyx_kp_s_Inverse_sine_undefined_for_x_not, __pyx_k_Inverse_sine_undefined_for_x_not, sizeof(__pyx_k_Inverse_sine_undefined_for_x_not), 0, 0, 1, 0},
+    {&__pyx_kp_u_Inverse_hyperbolic_secant_undefi, __pyx_k_Inverse_hyperbolic_secant_undefi, sizeof(__pyx_k_Inverse_hyperbolic_secant_undefi), 0, 1, 0, 0},
+    {&__pyx_kp_u_Inverse_hyperbolic_tangent_undef, __pyx_k_Inverse_hyperbolic_tangent_undef, sizeof(__pyx_k_Inverse_hyperbolic_tangent_undef), 0, 1, 0, 0},
+    {&__pyx_kp_u_Inverse_secant_undefined_in_rang, __pyx_k_Inverse_secant_undefined_in_rang, sizeof(__pyx_k_Inverse_secant_undefined_in_rang), 0, 1, 0, 0},
+    {&__pyx_kp_u_Inverse_sine_undefined_for_x_not, __pyx_k_Inverse_sine_undefined_for_x_not, sizeof(__pyx_k_Inverse_sine_undefined_for_x_not), 0, 1, 0, 0},
     {&__pyx_kp_u_Inverse_tangent_only_defined_wit, __pyx_k_Inverse_tangent_only_defined_wit, sizeof(__pyx_k_Inverse_tangent_only_defined_wit), 0, 1, 0, 0},
-    {&__pyx_kp_s_Logarithm_is_undefined_for_non_p, __pyx_k_Logarithm_is_undefined_for_non_p, sizeof(__pyx_k_Logarithm_is_undefined_for_non_p), 0, 0, 1, 0},
+    {&__pyx_kp_u_Logarithm_is_undefined_for_non_p, __pyx_k_Logarithm_is_undefined_for_non_p, sizeof(__pyx_k_Logarithm_is_undefined_for_non_p), 0, 1, 0, 0},
     {&__pyx_n_s_NotImplemented, __pyx_k_NotImplemented, sizeof(__pyx_k_NotImplemented), 0, 0, 1, 1},
     {&__pyx_n_s_NotImplementedError, __pyx_k_NotImplementedError, sizeof(__pyx_k_NotImplementedError), 0, 0, 1, 1},
     {&__pyx_n_s_PickleError, __pyx_k_PickleError, sizeof(__pyx_k_PickleError), 0, 0, 1, 1},
-    {&__pyx_kp_s_This_method_is_only_defined_for, __pyx_k_This_method_is_only_defined_for, sizeof(__pyx_k_This_method_is_only_defined_for), 0, 0, 1, 0},
+    {&__pyx_kp_u_This_method_is_only_defined_for, __pyx_k_This_method_is_only_defined_for, sizeof(__pyx_k_This_method_is_only_defined_for), 0, 1, 0, 0},
     {&__pyx_n_s_ZeroDivisionError, __pyx_k_ZeroDivisionError, sizeof(__pyx_k_ZeroDivisionError), 0, 0, 1, 1},
     {&__pyx_kp_u__20, __pyx_k__20, sizeof(__pyx_k__20), 0, 1, 0, 0},
     {&__pyx_n_s__22, __pyx_k__22, sizeof(__pyx_k__22), 0, 0, 1, 1},
     {&__pyx_kp_u__4, __pyx_k__4, sizeof(__pyx_k__4), 0, 1, 0, 0},
     {&__pyx_n_s__70, __pyx_k__70, sizeof(__pyx_k__70), 0, 0, 1, 1},
     {&__pyx_n_s_abs, __pyx_k_abs, sizeof(__pyx_k_abs), 0, 0, 1, 1},
-    {&__pyx_n_s_acos, __pyx_k_acos, sizeof(__pyx_k_acos), 0, 0, 1, 1},
-    {&__pyx_n_s_acosh, __pyx_k_acosh, sizeof(__pyx_k_acosh), 0, 0, 1, 1},
+    {&__pyx_n_u_acos, __pyx_k_acos, sizeof(__pyx_k_acos), 0, 1, 0, 1},
+    {&__pyx_n_u_acosh, __pyx_k_acosh, sizeof(__pyx_k_acosh), 0, 1, 0, 1},
     {&__pyx_n_s_acot, __pyx_k_acot, sizeof(__pyx_k_acot), 0, 0, 1, 1},
     {&__pyx_n_s_acsc, __pyx_k_acsc, sizeof(__pyx_k_acsc), 0, 0, 1, 1},
     {&__pyx_n_s_acsch, __pyx_k_acsch, sizeof(__pyx_k_acsch), 0, 0, 1, 1},
+    {&__pyx_n_u_acsch, __pyx_k_acsch, sizeof(__pyx_k_acsch), 0, 1, 0, 1},
     {&__pyx_n_s_append, __pyx_k_append, sizeof(__pyx_k_append), 0, 0, 1, 1},
     {&__pyx_n_s_arccos, __pyx_k_arccos, sizeof(__pyx_k_arccos), 0, 0, 1, 1},
+    {&__pyx_n_u_arccos, __pyx_k_arccos, sizeof(__pyx_k_arccos), 0, 1, 0, 1},
     {&__pyx_n_s_arccosh, __pyx_k_arccosh, sizeof(__pyx_k_arccosh), 0, 0, 1, 1},
+    {&__pyx_n_u_arccosh, __pyx_k_arccosh, sizeof(__pyx_k_arccosh), 0, 1, 0, 1},
     {&__pyx_n_s_arccot, __pyx_k_arccot, sizeof(__pyx_k_arccot), 0, 0, 1, 1},
     {&__pyx_n_s_arccsc, __pyx_k_arccsc, sizeof(__pyx_k_arccsc), 0, 0, 1, 1},
     {&__pyx_n_s_arccsch, __pyx_k_arccsch, sizeof(__pyx_k_arccsch), 0, 0, 1, 1},
+    {&__pyx_n_u_arccsch, __pyx_k_arccsch, sizeof(__pyx_k_arccsch), 0, 1, 0, 1},
     {&__pyx_n_s_arcsec, __pyx_k_arcsec, sizeof(__pyx_k_arcsec), 0, 0, 1, 1},
     {&__pyx_n_s_arcsech, __pyx_k_arcsech, sizeof(__pyx_k_arcsech), 0, 0, 1, 1},
+    {&__pyx_n_u_arcsech, __pyx_k_arcsech, sizeof(__pyx_k_arcsech), 0, 1, 0, 1},
     {&__pyx_n_s_arcsin, __pyx_k_arcsin, sizeof(__pyx_k_arcsin), 0, 0, 1, 1},
+    {&__pyx_n_u_arcsin, __pyx_k_arcsin, sizeof(__pyx_k_arcsin), 0, 1, 0, 1},
     {&__pyx_n_s_arcsinh, __pyx_k_arcsinh, sizeof(__pyx_k_arcsinh), 0, 0, 1, 1},
+    {&__pyx_n_u_arcsinh, __pyx_k_arcsinh, sizeof(__pyx_k_arcsinh), 0, 1, 0, 1},
     {&__pyx_n_s_arctan, __pyx_k_arctan, sizeof(__pyx_k_arctan), 0, 0, 1, 1},
+    {&__pyx_n_u_arctan, __pyx_k_arctan, sizeof(__pyx_k_arctan), 0, 1, 0, 1},
     {&__pyx_n_s_arctanh, __pyx_k_arctanh, sizeof(__pyx_k_arctanh), 0, 0, 1, 1},
+    {&__pyx_n_u_arctanh, __pyx_k_arctanh, sizeof(__pyx_k_arctanh), 0, 1, 0, 1},
     {&__pyx_n_s_arg, __pyx_k_arg, sizeof(__pyx_k_arg), 0, 0, 1, 1},
     {&__pyx_n_s_args, __pyx_k_args, sizeof(__pyx_k_args), 0, 0, 1, 1},
     {&__pyx_n_s_array_function, __pyx_k_array_function, sizeof(__pyx_k_array_function), 0, 0, 1, 1},
@@ -24014,11 +24056,12 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_array_ufunc, __pyx_k_array_ufunc, sizeof(__pyx_k_array_ufunc), 0, 0, 1, 1},
     {&__pyx_n_s_asec, __pyx_k_asec, sizeof(__pyx_k_asec), 0, 0, 1, 1},
     {&__pyx_n_s_asech, __pyx_k_asech, sizeof(__pyx_k_asech), 0, 0, 1, 1},
-    {&__pyx_n_s_asin, __pyx_k_asin, sizeof(__pyx_k_asin), 0, 0, 1, 1},
-    {&__pyx_n_s_asinh, __pyx_k_asinh, sizeof(__pyx_k_asinh), 0, 0, 1, 1},
+    {&__pyx_n_u_asech, __pyx_k_asech, sizeof(__pyx_k_asech), 0, 1, 0, 1},
+    {&__pyx_n_u_asin, __pyx_k_asin, sizeof(__pyx_k_asin), 0, 1, 0, 1},
+    {&__pyx_n_u_asinh, __pyx_k_asinh, sizeof(__pyx_k_asinh), 0, 1, 0, 1},
     {&__pyx_n_s_asyncio_coroutines, __pyx_k_asyncio_coroutines, sizeof(__pyx_k_asyncio_coroutines), 0, 0, 1, 1},
-    {&__pyx_n_s_atanh, __pyx_k_atanh, sizeof(__pyx_k_atanh), 0, 0, 1, 1},
-    {&__pyx_n_s_call, __pyx_k_call, sizeof(__pyx_k_call), 0, 0, 1, 1},
+    {&__pyx_n_u_atanh, __pyx_k_atanh, sizeof(__pyx_k_atanh), 0, 1, 0, 1},
+    {&__pyx_n_u_call, __pyx_k_call, sizeof(__pyx_k_call), 0, 1, 0, 1},
     {&__pyx_n_s_class, __pyx_k_class, sizeof(__pyx_k_class), 0, 0, 1, 1},
     {&__pyx_n_s_class_getitem, __pyx_k_class_getitem, sizeof(__pyx_k_class_getitem), 0, 0, 1, 1},
     {&__pyx_n_s_cline_in_traceback, __pyx_k_cline_in_traceback, sizeof(__pyx_k_cline_in_traceback), 0, 0, 1, 1},
@@ -24149,7 +24192,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *             R_real = self.real/x.real
  *             R_dual = (self.dual*x.real - self.real*x.dual)/(x.dual**2)
  */
-  __pyx_tuple__3 = PyTuple_Pack(1, __pyx_kp_s_Denominator_is_zero); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 171, __pyx_L1_error)
+  __pyx_tuple__3 = PyTuple_Pack(1, __pyx_kp_u_Denominator_is_zero); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 171, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__3);
   __Pyx_GIVEREF(__pyx_tuple__3);
 
@@ -24160,7 +24203,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         return Dual(np.arcsin(self.real), self.dual/np.sqrt(1-self.real**2))
  * 
  */
-  __pyx_tuple__5 = PyTuple_Pack(1, __pyx_kp_s_Inverse_sine_undefined_for_x_not); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(0, 312, __pyx_L1_error)
+  __pyx_tuple__5 = PyTuple_Pack(1, __pyx_kp_u_Inverse_sine_undefined_for_x_not); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(0, 312, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__5);
   __Pyx_GIVEREF(__pyx_tuple__5);
 
@@ -24171,7 +24214,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *     @implement(mp.csch)
  */
-  __pyx_tuple__6 = PyTuple_Pack(1, __pyx_kp_s_Inverse_cosecant_derivative_unde); if (unlikely(!__pyx_tuple__6)) __PYX_ERR(0, 356, __pyx_L1_error)
+  __pyx_tuple__6 = PyTuple_Pack(1, __pyx_kp_u_Inverse_cosecant_derivative_unde); if (unlikely(!__pyx_tuple__6)) __PYX_ERR(0, 356, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__6);
   __Pyx_GIVEREF(__pyx_tuple__6);
 
@@ -24182,7 +24225,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         else:
  *             return Dual(np.arccos(self.real), -self.dual/np.sqrt(1-self.real**2))
  */
-  __pyx_tuple__7 = PyTuple_Pack(1, __pyx_kp_s_Inverse_cosine_undefined_for_x_n); if (unlikely(!__pyx_tuple__7)) __PYX_ERR(0, 397, __pyx_L1_error)
+  __pyx_tuple__7 = PyTuple_Pack(1, __pyx_kp_u_Inverse_cosine_undefined_for_x_n); if (unlikely(!__pyx_tuple__7)) __PYX_ERR(0, 397, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__7);
   __Pyx_GIVEREF(__pyx_tuple__7);
 
@@ -24204,7 +24247,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *     @implement(mp.sech)
  */
-  __pyx_tuple__9 = PyTuple_Pack(1, __pyx_kp_s_Inverse_secant_undefined_in_rang); if (unlikely(!__pyx_tuple__9)) __PYX_ERR(0, 445, __pyx_L1_error)
+  __pyx_tuple__9 = PyTuple_Pack(1, __pyx_kp_u_Inverse_secant_undefined_in_rang); if (unlikely(!__pyx_tuple__9)) __PYX_ERR(0, 445, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__9);
   __Pyx_GIVEREF(__pyx_tuple__9);
 
@@ -24215,7 +24258,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *     @implement(np.tan)
  */
-  __pyx_tuple__10 = PyTuple_Pack(1, __pyx_kp_s_Inverse_hyperbolic_secant_undefi); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(0, 468, __pyx_L1_error)
+  __pyx_tuple__10 = PyTuple_Pack(1, __pyx_kp_u_Inverse_hyperbolic_secant_undefi); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(0, 468, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__10);
   __Pyx_GIVEREF(__pyx_tuple__10);
 
@@ -24237,7 +24280,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *     @implement(mp.cot)
  */
-  __pyx_tuple__12 = PyTuple_Pack(1, __pyx_kp_s_Inverse_hyperbolic_tangent_undef); if (unlikely(!__pyx_tuple__12)) __PYX_ERR(0, 514, __pyx_L1_error)
+  __pyx_tuple__12 = PyTuple_Pack(1, __pyx_kp_u_Inverse_hyperbolic_tangent_undef); if (unlikely(!__pyx_tuple__12)) __PYX_ERR(0, 514, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__12);
   __Pyx_GIVEREF(__pyx_tuple__12);
 
@@ -24248,7 +24291,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         return Dual(np.log(self.real), self.dual/self.real)
  * 
  */
-  __pyx_tuple__13 = PyTuple_Pack(1, __pyx_kp_s_Logarithm_is_undefined_for_non_p); if (unlikely(!__pyx_tuple__13)) __PYX_ERR(0, 554, __pyx_L1_error)
+  __pyx_tuple__13 = PyTuple_Pack(1, __pyx_kp_u_Logarithm_is_undefined_for_non_p); if (unlikely(!__pyx_tuple__13)) __PYX_ERR(0, 554, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__13);
   __Pyx_GIVEREF(__pyx_tuple__13);
 
@@ -24259,7 +24302,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         p_der = func(*vars).dual
  */
-  __pyx_tuple__14 = PyTuple_Pack(1, __pyx_kp_s_This_method_is_only_defined_for); if (unlikely(!__pyx_tuple__14)) __PYX_ERR(0, 589, __pyx_L1_error)
+  __pyx_tuple__14 = PyTuple_Pack(1, __pyx_kp_u_This_method_is_only_defined_for); if (unlikely(!__pyx_tuple__14)) __PYX_ERR(0, 589, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__14);
   __Pyx_GIVEREF(__pyx_tuple__14);
 
@@ -24282,7 +24325,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *     def append(self, element):
  */
-  __pyx_tuple__17 = PyTuple_Pack(1, __pyx_kp_s_A_Collection_is_meant_to_only_ho); if (unlikely(!__pyx_tuple__17)) __PYX_ERR(0, 700, __pyx_L1_error)
+  __pyx_tuple__17 = PyTuple_Pack(1, __pyx_kp_u_A_Collection_is_meant_to_only_ho); if (unlikely(!__pyx_tuple__17)) __PYX_ERR(0, 700, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__17);
   __Pyx_GIVEREF(__pyx_tuple__17);
 
@@ -24293,7 +24336,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *             return Collection([s / t for s, t in zip(self.elements, x.elements)])
  *         elif isinstance(x, Dual):
  */
-  __pyx_tuple__18 = PyTuple_Pack(1, __pyx_kp_s_A_denominator_is_zero); if (unlikely(!__pyx_tuple__18)) __PYX_ERR(0, 807, __pyx_L1_error)
+  __pyx_tuple__18 = PyTuple_Pack(1, __pyx_kp_u_A_denominator_is_zero); if (unlikely(!__pyx_tuple__18)) __PYX_ERR(0, 807, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__18);
   __Pyx_GIVEREF(__pyx_tuple__18);
 
@@ -25647,14 +25690,14 @@ if (!__Pyx_RefNanny) {
  */
   __pyx_t_2 = __Pyx_PyDict_NewPresized(8); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 38, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_acos, __pyx_n_s_arccos) < 0) __PYX_ERR(0, 38, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_asin, __pyx_n_s_arcsin) < 0) __PYX_ERR(0, 38, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_arctan, __pyx_n_s_arctan) < 0) __PYX_ERR(0, 38, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_acosh, __pyx_n_s_arccosh) < 0) __PYX_ERR(0, 38, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_asinh, __pyx_n_s_arcsinh) < 0) __PYX_ERR(0, 38, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_atanh, __pyx_n_s_arctanh) < 0) __PYX_ERR(0, 38, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_asech, __pyx_n_s_arcsech) < 0) __PYX_ERR(0, 38, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_acsch, __pyx_n_s_arccsch) < 0) __PYX_ERR(0, 38, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_u_acos, __pyx_n_u_arccos) < 0) __PYX_ERR(0, 38, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_u_asin, __pyx_n_u_arcsin) < 0) __PYX_ERR(0, 38, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_u_arctan, __pyx_n_u_arctan) < 0) __PYX_ERR(0, 38, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_u_acosh, __pyx_n_u_arccosh) < 0) __PYX_ERR(0, 38, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_u_asinh, __pyx_n_u_arcsinh) < 0) __PYX_ERR(0, 38, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_u_atanh, __pyx_n_u_arctanh) < 0) __PYX_ERR(0, 38, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_u_asech, __pyx_n_u_arcsech) < 0) __PYX_ERR(0, 38, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_u_acsch, __pyx_n_u_arccsch) < 0) __PYX_ERR(0, 38, __pyx_L1_error)
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_15dual_autodiff_x_4dual_Dual, __pyx_n_s_HANDLED_NUMPY_FUNCTIONS, __pyx_t_2) < 0) __PYX_ERR(0, 37, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_15dual_autodiff_x_4dual_Dual);
