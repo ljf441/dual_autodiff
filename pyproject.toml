@@ -25,6 +25,9 @@ local_scheme = "no-local-version"
 
 [tool.setuptools.packages.find]
 where = ["."]
+include = ["dual_autodiff"]  # Explicitly include the dual_autodiff package
+exclude = ["tests*", "docs*", "_*", "build*", "*.egg-info", "report*", "__pycache__"]
+
 
 [project.urls]
 Homepage = "https://github.com/ljf441/dual_autodiff"

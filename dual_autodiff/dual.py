@@ -593,7 +593,7 @@ class Dual:
 
         Parameters:
             func (function): Function to differentiate.
-            *args (int, float): Dual numbers representing the variables in the order to be placed in the function.
+            args (int, float): Dual numbers representing the variables in the order to be placed in the function.
 
         Returns:
             p_der (int, float): A real number representing the partial derivative.
@@ -642,6 +642,15 @@ class Collection():
         def method(*args, **kwargs):
             return Collection([getattr(element, attr)(*args, **kwargs) for element in self.elements])
         return method
+    
+    def push(self, x):
+        """
+        Adds Dual number to Collection list.
+
+        Parameters:
+            x: the Dual number
+        """
+        self.elements.append(x)
     
     def __array_ufunc__(self, ufunc, method, inputs, *args, **kwargs):
         """

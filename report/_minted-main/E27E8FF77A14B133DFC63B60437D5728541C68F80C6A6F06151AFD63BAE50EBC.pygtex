@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} trigonometric operations as well as the natural logarithm and exponential}
+
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}sin(x) = }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{x}\PYG{o}{.}\PYG{n}{sin}\PYG{p}{()}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}cos(x) = }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{x}\PYG{o}{.}\PYG{n}{cos}\PYG{p}{()}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}tan(x) = }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{x}\PYG{o}{.}\PYG{n}{tan}\PYG{p}{()}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}log(x) = }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{x}\PYG{o}{.}\PYG{n}{log}\PYG{p}{()}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}exp(x) = }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{x}\PYG{o}{.}\PYG{n}{exp}\PYG{p}{()}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\end{Verbatim}
