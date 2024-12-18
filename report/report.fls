@@ -53,6 +53,8 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
 INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
 INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
@@ -468,11 +470,6 @@ INPUT ./report.pyg
 INPUT ./_minted-report/DE1646A73A0DF5C54B0A0DA014397B13F73D778D6577DD371281B40198477396.pygtex
 INPUT ./_minted-report/DE1646A73A0DF5C54B0A0DA014397B13F73D778D6577DD371281B40198477396.pygtex
 INPUT _minted-report/DE1646A73A0DF5C54B0A0DA014397B13F73D778D6577DD371281B40198477396.pygtex
-INPUT ../percentage_difference.png
-INPUT ../percentage_difference.png
-INPUT ../percentage_difference.png
-INPUT ../percentage_difference.png
-INPUT ../percentage_difference.png
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/zptmcm7m.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/psyro.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
@@ -481,6 +478,11 @@ INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/zptmcm7v.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm
+INPUT ../percentage_difference.png
+INPUT ../percentage_difference.png
+INPUT ../percentage_difference.png
+INPUT ../percentage_difference.png
+INPUT ../percentage_difference.png
 INPUT python3 jupynotex.py '../dual_autodiff.ipynb' '21' ''
 OUTPUT report.pyg
 INPUT ./report.pyg
@@ -507,6 +509,11 @@ INPUT ../speedup.png
 INPUT ../speedup.png
 INPUT ../speedup.png
 INPUT ../speedup.png
+INPUT ./report.bbl
+INPUT ./report.bbl
+INPUT report.bbl
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmr8t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmr8t.vf
 INPUT report.aux
 INPUT ./report.out
 INPUT ./report.out

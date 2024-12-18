@@ -7,6 +7,7 @@
 %\usepackage{gentium}
 \usepackage{mathptmx} % Use Times Font
 \usepackage{pdflscape}
+\usepackage[numbers]{natbib}
 
 
 \usepackage[pdftex]{graphicx} % Required for including pictures
@@ -56,7 +57,7 @@ pdfauthor = {Laura Just Fung (lj441)}
     \\
     December 18, 2024
     \\
-    Word count: 2373
+    Word count: 1647
 \end{center}
 
 
@@ -81,9 +82,6 @@ One application of dual numbers is their use in automatic differentiation. Any r
 
 as all terms involving $\epsilon^2$ are trivially zero. When these functions are computed over dual numbers, the dual part of the answer automatically encodes the derivative of the function. This makes them especially useful in machine learning, where derivatives are frequently calculated but can be expensive to obtain.
 
-
-% This report first covers the repository structure. Then the implementation of dual numbers is discussed along with how the package may be configured with \texttt{pyproject.toml}, installed with \texttt{pip}, and tested using \texttt{pytest}. The documentation of the package with \texttt{Sphinx} is also discussed. Then, Cythonization is covered, along with comparisons made between the Cythonized and pure Python versions of the package. Finally, how the Cythonized package may be installed from wheels is discussed.
-
 \section{Repository}
 \subsection{Structure}
 The source code for this project was organised into the following folders:
@@ -91,7 +89,7 @@ The source code for this project was organised into the following folders:
 \begin{itemize}
     \item \texttt{dual\_autodiff} contains the Python implementation of the \texttt{Dual} class in \texttt{dual.py}.
     \item \texttt{dual\_autodiff\_x/src} contains the Cythonized implementation of the \texttt{Dual} class in \texttt{dual.pyc}.
-    \item \texttt{tests} contains the various \texttt{.py} test modules that can be used by \texttt{pytest}.
+    \item \texttt{tests} contains the various \texttt{.py} test modules that can be used by \texttt{pytest} \citep{pytestx.y}.
     \item \texttt{wheelhouse} contains the pure Python wheels.
     \item \texttt{dual\_autodiff\_x/wheelhouse} contains the Cythonized wheels.
 \end{itemize}
@@ -137,13 +135,13 @@ The following is a representation of the overall directory structure:
 
 \subsection{Project configuration}
 In order to compile this package, a \texttt{pyproject.toml} file was used. The following is its contents:
-\lstinputlisting[caption={Contents of the pyproject.toml file.}]{../pyproject.toml}
+\lstinputlisting[caption={Contents of the \texttt{pyproject.toml} file.}]{../pyproject.toml}
 \newpage
 \section{Implementation}
 In order to create a package that implements dual numbers, a class that defines what a dual number is must first be created. Afterwards, the usual binary operations (addition, subtraction, multiplication, division, exponentiation, etc.) in Python are overloaded with the dual implementations. After that, additional functions can be overloaded, including \texttt{NumPy} and \texttt{mpmath} trigonometric functions, so that dual numbers can be handled as well as real numbers. 
 \subsection{Dual class}
 The \texttt{Dual} class is defined and initialised like so:
-\lstinputlisting[caption={Dual class initialisation in Python file},language=python,linerange={5,14,22, 23}]{../dual_autodiff/dual.py}
+\lstinputlisting[caption={Dual class initialisation in \texttt{dual.py}},language=python,linerange={5,14,22, 23}]{../dual_autodiff/dual.py}
 The \texttt{real} and \texttt{dual} variables are defined as attributes of the \texttt{Dual} class that can be accessed publicly.
 
 A dual number can be initialised as follows:
@@ -203,25 +201,25 @@ Comparing this to the analytic result
     \frac{df}{dx} = \frac{\cos{x}}{\sin{x}} + 2 x \cos{x} - x^2 \sin{x} 
 \end{equation}
 
-and various numerical methods including the central
+and various numerical methods including the central \citep{numericaldiff}
 
 \begin{equation}
     \frac{d}{dx} f(x) \approx \frac{f(x+h) - f(x-h)}{2h},
 \end{equation}
 
-forward
+forward \citep{numericaldiff}
 
 \begin{equation}
     \frac{d}{dx} f(x) \approx \frac{f(x+h) - f(x)}{2h},
 \end{equation}
 
-backward
+backward \citep{numericaldiff}
 
 \begin{equation}
     \frac{d}{dx} f(x) \approx \frac{f(x) - f(x-h)}{2h},
 \end{equation}
 
-and five-point equations
+and five-point \citep{sauer_numerical_2012} equations 
 
 \begin{equation}
     \frac{d}{dx} f(x) \approx \frac{-f(x+2h) + 8 f(x+h) - 8 f(x-h) + f(x-2h)}{12h},
@@ -251,7 +249,7 @@ where accuracy mostly depends on the step size $h$. For the following comparison
     \label{tab:diffs}
 \end{table}
 
-The Richardson extrapolation was also used to improve the accuracy of the numerical methods. It works by taking two central approximations of the differentiation with two different step sizes $h$ and $\frac{h}{2}$ and using these to eliminate the $O(h^2)$ error term:
+The Richardson extrapolation \citep{1911RSPTA.210..307R} was also used to improve the accuracy of the numerical methods. It works by taking two central approximations of the differentiation with two different step sizes $h$ and $\frac{h}{2}$ and using these to eliminate the $O(h^2)$ error term:
 
 \begin{equation}
     D(h) = \frac{f(x+h) - f(x-h)}{2h}, 
@@ -266,13 +264,14 @@ The Richardson extrapolation was also used to improve the accuracy of the numeri
 \end{equation}
 
 Comparing the numerical methods to the \texttt{Dual} result, it can be seen that with increasing step size $h$, the percentage difference gets larger, as shown in Fig.~\ref{fig:pdiff}.
-
+\begin{landscape}
 \begin{figure}
     \centering
     \includegraphics[width=\columnwidth, keepaspectratio]{../percentage_difference.png}
     \caption{Percentage difference between numerical and \texttt{Dual} results for the differentiation of Eq.~\ref{eq:func} at $x=1.5$ as a function of step-size $h$.}
     \label{fig:pdiff}
 \end{figure}
+\end{landscape}
 \clearpage
 \section{Test suite}
 Test suites for each of the overloaded operations and functions were made in \texttt{test\_dual.py}.
@@ -284,7 +283,7 @@ Tests can be run using \texttt{python -m pytest tests} from within the root dire
 \jupynotex[21]{../dual_autodiff.ipynb}
 
 \section{Project documentation with \texttt{\textbf{Sphinx}}}
-The project documentation for the \texttt{dual\_autodiff} package was done using docstrings in the \texttt{dual.py} file and compiled with \texttt{Sphinx}. The \texttt{index.rst} and \texttt{conf.py} files can be found in \texttt{docs} whilst the compiled \texttt{index.html} file can be found in \texttt{build}.
+The project documentation for the \texttt{dual\_autodiff} package was done using docstrings in the \texttt{dual.py} file and compiled with \texttt{Sphinx} \citep{brandl2021sphinx}. The \texttt{index.rst} and \texttt{conf.py} files can be found in \texttt{docs} whilst the compiled \texttt{index.html} file can be found in \texttt{build}.
 
 To use \texttt{Sphinx}, \texttt{cd} to the \texttt{docs} folder and run:
 
@@ -298,13 +297,13 @@ Please note that this requires \texttt{Sphinx} which can be pip installed using 
     pip install -r requirements.txt
 \end{lstlisting}
 \section{Cythonization}
-Cythonization is when a Python file is compiled into optimised C/C++. This allows for fast program execution and the ability to directly call C libraries. It uses \texttt{Cython} to do this, which requires either a \texttt{.py} or \texttt{.pyx} file to Cythonize.
+Cythonization \citep{behnel2011cython} is when a Python file is compiled into optimised C/C++. This allows for fast program execution and the ability to directly call C libraries. It uses \texttt{Cython} to do this, which requires either a \texttt{.py} or \texttt{.pyx} file to Cythonize.
 
 Within the file, it is helpful to add \texttt{cdef} before any definitions of classes or functions and to also publicly declare any variables that need to be accessed outside of the class through \texttt{cython.declare(cython.float, visibility="public")}.
 
 Then, using a \texttt{setup.py} file, \texttt{Cython} can be called to cythonize the program. An example of this can be seen below:
 
-\lstinputlisting[caption={setup.py}, language=Python]{../dual_autodiff_x/setup.py}
+\lstinputlisting[caption={The contents of the \texttt{setup.py} file.}, language=Python]{../dual_autodiff_x/setup.py}
 
 \section{Comparison between Cythonized and pure Python programs}
 
@@ -337,7 +336,7 @@ The operations in which \texttt{dual\_autodiff\_x} shows the greatest performanc
 
 \section{Wheels}
 
-\texttt{cibuildwheel} is a package that uses Docker to create wheels specifically for different operating systems and architectures. Wheels are a way to distribute Python packages.
+\texttt{cibuildwheel} \citep{cibuildwheel} is a package that uses Docker to create wheels specifically for different operating systems and architectures. Wheels are a way to distribute Python packages.
 
 For the \texttt{dual\_autodiff\_x} package, two wheels were created: one for Python 3.10 in a Linux x86 64 environment, and the other for Python 3.11 in the same environment.
 
@@ -364,6 +363,8 @@ And then to use the Docker image:
 \begin{lstlisting}
     docker run -p 8888:8888 dual_autodiff-img
 \end{lstlisting}
+\section{Summary}
+A package that implements a dual number class for automatic differentiation was implemented in Python 3. This package was extended such that partial differentiation is natively possible, collections of \texttt{Dual} objects can be acted on by class methods, and additional trigonometric functions were added. A testing suite was added to be used by \texttt{pytest}. The package was then Cythonized to take advantage of C/C++ libraries and to allow for fast program execution. The package was also built then into wheels specifically for Python 3.10 and 3.11 in a Linux environment and uploaded to Gitlab.
 \bibliographystyle{vancouver}
 \bibliography{bibliography}
 \appendix

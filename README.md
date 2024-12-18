@@ -71,8 +71,11 @@ The report is located in the `report` folder and is named `report.pdf`.
 # where to find the Sphinx documentation
 `cd` to `docs` and run `build html`. The `.html` pages will be in `docs/_build/html`.
 
-# use of auto-generation tools
+# where to find the wheels
+- The wheels for the pure Python package are found in `wheelhouse`.
+- The wheels for the Cythonized package are found in `dual_autodiff_x/wheelhouse`
 
+# use of auto-generation tools
 Auto-generation tools were used as follows:
 - Parsing error messages throughout the project.
 - Assistance in formatting the report in $\LaTeX$, specifically with tables and referencing.

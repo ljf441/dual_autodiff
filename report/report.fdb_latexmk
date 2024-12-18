@@ -1,5 +1,13 @@
 # Fdb version 4
-["pdflatex"] 1734546125.69991 "/home/ljf1/dis/dual_autodiff/report/report.tex" "report.pdf" "report" 1734546127.25624 0
+["bibtex report"] 1734549499.59672 "report.aux" "report.bbl" "report" 1734549536.40012 0
+  "./bibliography.bib" 1734549490.5611 2126 cfd58ef4ce342a81890d4d0272567b33 ""
+  "./vancouver.bst" 1734547427.73319 40624 ac6ae80a2b874e3abad2798e8fbde6a2 ""
+  "report.aux" 1734549536.12807 6468 c1833aa0ab4c0e704750c25abd62ec67 "pdflatex"
+  (generated)
+  "report.bbl"
+  "report.blg"
+  (rewritten before read)
+["pdflatex"] 1734549534.59826 "/home/ljf1/dis/dual_autodiff/report/report.tex" "report.pdf" "report" 1734549536.40024 0
   "../dual_autodiff/dual.py" 1734545683.51094 29885 ec93ade7f116a59d50da602feeac208c ""
   "../dual_autodiff_x/setup.py" 1734093313.0327 751 41e5a89aeefb4324645c7e204d88da93 ""
   "../memory.png" 1734535336.49127 237773 d8595d1493e64933a765aafc050be5a6 ""
@@ -8,7 +16,7 @@
   "../speedup.png" 1734187552.21387 28618 587a6ba343f298959aa643d9c4c3a421 ""
   "../time.png" 1734536275.50772 302201 7dad19d5c0e3a2fe08ff23f8844897a3 ""
   "/etc/texmf/web2c/texmf.cnf" 1731690417.5266 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/ljf1/dis/dual_autodiff/report/report.tex" 1734546123.73417 16857 18856242b06fa8624036cf9fe76cd11a ""
+  "/home/ljf1/dis/dual_autodiff/report/report.tex" 1734549534.35507 17754 4bdabae75393ec8a409c232390bb49ea ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
@@ -182,6 +190,7 @@
   "/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-cmr.cfg" 1678741534 22906 7a8d9f8766e60f694cdde7648421c2ab ""
   "/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-ptm.cfg" 1678741534 12427 02d1873769280609ae2509e963f1fa66 ""
   "/usr/share/texlive/texmf-dist/tex/latex/minted/minted.sty" 1702933033 49628 346b97c41d54ef753d3e2299e21c4996 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty" 1707919699 45458 f1c6cb3edd91174e966cbbaf88993bcf ""
   "/usr/share/texlive/texmf-dist/tex/latex/nowidow/nowidow.sty" 1316732299 1779 047ddae5c808452526118051abc46740 ""
   "/usr/share/texlive/texmf-dist/tex/latex/pdflscape/pdflscape-nometadata.sty" 1667072951 6572 ea530fbbe537629fd97736d33babc07d ""
   "/usr/share/texlive/texmf-dist/tex/latex/pdflscape/pdflscape.sty" 1667072951 2224 1230ab76aa62221ccbd90bca8c8c015e ""
@@ -235,9 +244,10 @@
   "_minted-report/FDA1AD62ABF077A33796DD363C628A51F73D778D6577DD371281B40198477396.pygtex" 1734543452.61786 1191 4c31d0f86fb8977a75c471d1329aa15e ""
   "_minted-report/default.pygstyle" 1734532450.00402 6428 74aba51736a5bc6590f8f7dd413c6f27 ""
   "jupynotex.sty" 1731871061.43784 388 6be853b1528fd840c2001a0c37f671d4 ""
-  "report.aux" 1734546127.15417 5555 88fe1bed764f8179ec263416cab44e06 "pdflatex"
-  "report.out" 1734546127.15417 2396 ab7c6cdf1d52d45fdde0b992fccb7deb "pdflatex"
-  "report.tex" 1734546123.73417 16857 18856242b06fa8624036cf9fe76cd11a ""
+  "report.aux" 1734549536.12807 6468 c1833aa0ab4c0e704750c25abd62ec67 "pdflatex"
+  "report.bbl" 1734549504.8801 1515 34677f9a6365403da1280b94c245cecb "bibtex report"
+  "report.out" 1734549536.12807 2670 a8fc0d8f3bde5f3bf13046bf5ec913c1 "pdflatex"
+  "report.tex" 1734549534.35507 17754 4bdabae75393ec8a409c232390bb49ea ""
   (generated)
   "report.aux"
   "report.log"
