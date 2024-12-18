@@ -82,4 +82,4 @@ Auto-generation tools were used as follows:
 - Code prototyping with `__array_ufunc__` and `__array_function__` so that `NumPy` functions are able to be used on `Dual` objects.
 - Code alterations when Cythonizing the package.
 
-Auto-generation tools were not used elsewhere.
+Auto-generation tools were not used elsewhere, for code generation or writing or otherwise.

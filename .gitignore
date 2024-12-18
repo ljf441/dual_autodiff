@@ -7,3 +7,4 @@ dual_autodiff_x/dual_autodiff_x.egg-info/*
 .pytest_cache/*
 .tox/*
 build/*
+_minted-main/*
