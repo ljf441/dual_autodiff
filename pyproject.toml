@@ -25,7 +25,7 @@ local_scheme = "no-local-version"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["dual_autodiff"]  # Explicitly include the dual_autodiff package
+include = ["dual_autodiff"]
 exclude = ["tests*", "docs*", "_*", "build*", "*.egg-info", "report*", "__pycache__"]
 
 

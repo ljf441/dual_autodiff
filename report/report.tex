@@ -57,7 +57,7 @@ pdfauthor = {Laura Just Fung (lj441)}
     \\
     December 18, 2024
     \\
-    Word count: 1647
+    Word count: 1844
 \end{center}
 
 
@@ -120,6 +120,7 @@ The following is a representation of the overall directory structure:
 .3 wheelhouse.
 .4 \ldots.
 .3 src.
+.4 {\_}{\_}init{\_}{\_}.py.
 .4 dual.pyc.
 .3 {\_}{\_}init{\_}{\_}.py.
 .3 setup.py.
@@ -134,9 +135,15 @@ The following is a representation of the overall directory structure:
 }
 
 \subsection{Project configuration}
-In order to compile this package, a \texttt{pyproject.toml} file was used. The following is its contents:
-\lstinputlisting[caption={Contents of the \texttt{pyproject.toml} file.}]{../pyproject.toml}
-\newpage
+In order to compile this package, a \texttt{pyproject.toml} file was used. \texttt{pyproject.toml} files should contain:
+\begin{itemize}
+    \item \texttt{[build-system]} table, declaring which build backend is used and other dependencies required
+    \item \texttt{[project]} table, specifying the package's name, version, description, readme, Python version requirement, license, authors, dependencies, and URLs.
+    \item \texttt{[tool]} table, specifically \texttt{[tool.setuptools\_scm]} to control versioning and \texttt{[tool. setuptools.packages.find]} to control where the package can be compiled from and what is included within.
+\end{itemize}
+% The following is its contents:
+% \lstinputlisting[caption={Contents of the \texttt{pyproject.toml} file.}]{../pyproject.toml}
+% \newpage
 \section{Implementation}
 In order to create a package that implements dual numbers, a class that defines what a dual number is must first be created. Afterwards, the usual binary operations (addition, subtraction, multiplication, division, exponentiation, etc.) in Python are overloaded with the dual implementations. After that, additional functions can be overloaded, including \texttt{NumPy} and \texttt{mpmath} trigonometric functions, so that dual numbers can be handled as well as real numbers. 
 \subsection{Dual class}
@@ -144,7 +151,7 @@ The \texttt{Dual} class is defined and initialised like so:
 \lstinputlisting[caption={Dual class initialisation in \texttt{dual.py}},language=python,linerange={5,14,22, 23}]{../dual_autodiff/dual.py}
 The \texttt{real} and \texttt{dual} variables are defined as attributes of the \texttt{Dual} class that can be accessed publicly.
 
-A dual number can be initialised as follows:
+A dual number can be initialised in \texttt{Python} as follows:
 \jupynotex[2]{../dual_autodiff.ipynb}
 And it produces the following output when printed:
 \jupynotex[3]{../dual_autodiff.ipynb}
@@ -263,7 +270,7 @@ The Richardson extrapolation \citep{1911RSPTA.210..307R} was also used to improv
     \frac{d}{dx} f(x) \approx \frac{4 D(\frac{h}{2}) - D(h)}{3}.
 \end{equation}
 
-Comparing the numerical methods to the \texttt{Dual} result, it can be seen that with increasing step size $h$, the percentage difference gets larger, as shown in Fig.~\ref{fig:pdiff}.
+Comparing the numerical methods to the \texttt{Dual} result, it can be seen that with decreasing step size $h$, the percentage difference gets smaller, as shown in Fig.~\ref{fig:pdiff}, and the numerical methods approach the 'true' value of the dual derivative. Interestingly enough, once the step size $h$ gets too small, as can be seen in the right-hand loglog plot of Fig.~\ref{fig:pdiff}, the percentage difference between the numerical result and the dual result begins to increase again. Perhaps it is because of floating point error that this occurs, as purely mathematically, by all rights, the percentage difference should keep decreasing as $h \to 0$.
 \begin{landscape}
 \begin{figure}
     \centering
@@ -276,7 +283,9 @@ Comparing the numerical methods to the \texttt{Dual} result, it can be seen that
 \section{Test suite}
 Test suites for each of the overloaded operations and functions were made in \texttt{test\_dual.py}.
 
-Tests were made for both left and right-sided operations, ensuring that the \texttt{Dual} class can operate on and be operated on by both real and Dual numbers. Tests were also made for the unary functions to ensure that the correct differentiation of each function was made. Tests were also made for the \texttt{Collection} class, ensuring that left and right-sided operations would work on this class as well as the same unary functions implemented for the \texttt{Dual} class. Additional tests were also made for the Cythonized \texttt{Dual} and \texttt{Collection} classes.
+Tests were made for both left and right-sided operations, ensuring that the \texttt{Dual} class can operate on and be operated on by both real and Dual numbers. Tests were also made for the unary functions to ensure that the correct differentiation of each function was made. Tests were also made to ensure that the correct exceptions were raised. 
+
+Additionally, tests were also made for the \texttt{Collection} class, ensuring that left and right-sided operations would work on this class as well as the same unary functions implemented for the \texttt{Dual} class. Additional tests were also made for the Cythonized \texttt{Dual} and \texttt{Collection} classes.
 
 Tests can be run using \texttt{python -m pytest tests} from within the root directory, as shown below.
 
@@ -312,6 +321,10 @@ The effects of Cythonization can be seen in Fig.~\ref{fig:memdiff} and Fig.~\ref
 In terms of time taken, \texttt{dual\_autodiff\_x} and \texttt{dual\_autodiff} tend to take about the same amount of time to execute operations. The main difference is that \texttt{dual\_autodiff\_x} tends to be a lot more stable, whilst \texttt{dual\_autodiff} exhibits intermittent spikes of lag.
 
 The operations in which \texttt{dual\_autodiff\_x} shows the greatest performance boost are the basic arithmetic operations: addition, subtraction, multiplication, and division. While speedup occurs for all functions timed, as seen in Fig.~\ref{fig:speedup}, the trigonometric functions show less of an improvement, as do the exponentiation, logarithmic, and exponential functions.
+
+A performance difference is observed, possibly because the implementation of C/C++ libraries and C/C++ optimization has allowed the Cythonized package to be faster.
+
+With the more complicated trigonometric functions, perhaps because \texttt{NumPy} already uses C in its implementation, not much of a performance difference can be seen.
 
 \begin{figure}
     \centering
