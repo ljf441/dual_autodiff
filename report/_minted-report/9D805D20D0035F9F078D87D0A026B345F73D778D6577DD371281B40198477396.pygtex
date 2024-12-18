@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{}running pytest}
+
+\PYG{err}{!}\PYG{n}{pytest} \PYG{n}{tests}
+\end{Verbatim}

@@ -1,8 +1,1 @@
-_minted-main
-build
 dual_autodiff
-dual_autodiff_files
-dual_autodiff_x
-report
-source
-tests

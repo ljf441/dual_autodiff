@@ -1,0 +1,17 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{}collections of Dual numbers}
+
+\PYG{c+c1}{\PYGZsh{}create a \PYGZsq{}Collection\PYGZsq{} of dual numbers. Only lists can be taken.}
+\PYG{n+nb}{vars} \PYG{o}{=} \PYG{n}{df}\PYG{o}{.}\PYG{n}{Collection}\PYG{p}{([}\PYG{n}{y}\PYG{p}{,} \PYG{n}{z}\PYG{p}{])}
+
+\PYG{c+c1}{\PYGZsh{}methods from the Dual class can then be used on Collections.}
+\PYG{n}{arccsch\PYGZus{}vars} \PYG{o}{=} \PYG{n+nb}{vars}\PYG{o}{.}\PYG{n}{arccsch}\PYG{p}{()}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Inverse hyperbolic cosecant:\PYGZdq{}}\PYG{p}{)}
+\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{arccsch\PYGZus{}vars}\PYG{p}{)):}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}acsch(}\PYG{l+s+si}{\PYGZob{}}\PYG{n+nb}{vars}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{) = }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{arccsch\PYGZus{}vars}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}}\PYG{p}{)}
+\PYG{c+c1}{\PYGZsh{}or methods from NumPy}
+\PYG{n}{sin\PYGZus{}vars} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{sin}\PYG{p}{(}\PYG{n+nb}{vars}\PYG{p}{)}
+\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{sin\PYGZus{}vars}\PYG{p}{)):}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}sin(}\PYG{l+s+si}{\PYGZob{}}\PYG{n+nb}{vars}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{) = }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{sin\PYGZus{}vars}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\end{Verbatim}

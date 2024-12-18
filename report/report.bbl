@@ -1,0 +1,41 @@
+\begin{thebibliography}{1}
+
+\bibitem{pytestx.y}
+Krekel H, Oliveira B, Pfannschmidt R, Bruynooghe F, Laugher B, Bruhin F. pytest
+  x.y; 2004.
+\newblock Available from: \url{https://github.com/pytest-dev/pytest}.
+
+\bibitem{numericaldiff}
+Kaw A. 2.03: Numerical Differentiation of Functions at Discrete Data Points;.
+\newblock Available from:
+  \url{https://math.libretexts.org/Workbench/Numerical_Methods_with_Applications_(Kaw)/2%3A_Differentiation/2.03%3A_Numerical_Differentiation_of_Functions_at_Discrete_Data_Points}.
+
+\bibitem{sauer_numerical_2012}
+Sauer T.
+\newblock Numerical analysis.
+\newblock 2nd ed. Boston: Pearson; 2012.
+\newblock OCLC: ocn725295545.
+
+\bibitem{1911RSPTA.210..307R}
+{Richardson} LF.
+\newblock {The Approximate Arithmetical Solution by Finite Differences of
+  Physical Problems Involving Differential Equations, with an Application to
+  the Stresses in a Masonry Dam}.
+\newblock Philosophical Transactions of the Royal Society of London Series A.
+  1911 Jan;210:307-57.
+
+\bibitem{brandl2021sphinx}
+Brandl G.
+\newblock Sphinx documentation.
+\newblock URL http://sphinx-doc org/sphinx pdf. 2021.
+
+\bibitem{behnel2011cython}
+Behnel S, Bradshaw R, Citro C, Dalcin L, Seljebotn DS, Smith K.
+\newblock Cython: The best of both worlds.
+\newblock Computing in Science \& Engineering. 2011;13(2):31-9.
+
+\bibitem{cibuildwheel}
+Rickerby J, Jadoul Y, Darbois M, Schreiner H, Grzegorz B. cibuildwheel; 2017.
+\newblock Available from: \url{https://github.com/pypa/cibuildwheel}.
+
+\end{thebibliography}

@@ -1,0 +1,8 @@
+graft dual_autodiff        # Include the entire dual_autodiff folder
+prune tests                # Exclude tests folder
+prune docs                 # Exclude docs folder
+prune _build               # Exclude build folders
+prune report               # Exclude reports
+prune *.egg-info           # Exclude egg-info directories
+exclude *.png              # Exclude images
+exclude *.tex *.pdf        # Exclude LaTeX and PDFs
