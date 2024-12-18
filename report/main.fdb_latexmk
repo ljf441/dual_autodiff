@@ -1,9 +1,9 @@
 # Fdb version 4
-["pdflatex"] 1734104993.1292 "/home/ljf1/dis/dual_autodiff/report/main.tex" "main.pdf" "main" 1734104997.76236 0
-  "../dual_autodiff/dual.py" 1734104992.30732 29886 9a94e3d7b2d25d209f723a33cebb24d5 ""
+["pdflatex"] 1734354133.08288 "/home/ljf1/dis/dual_autodiff/report/main.tex" "main.pdf" "main" 1734354135.54071 0
+  "../dual_autodiff/dual.py" 1734207057.33164 29885 ec93ade7f116a59d50da602feeac208c ""
   "../dual_autodiff_x/setup.py" 1734093313.0327 751 41e5a89aeefb4324645c7e204d88da93 ""
-  "../percentage_difference.png" 1734097142.46452 179421 479ed5bda7ba321a3d11efd8d940dd4f ""
-  "../pyproject.toml" 1732206531.7899 743 5f5a6669bbef0239b309c61d5bd79b1c ""
+  "../percentage_difference.png" 1734354128.12918 179421 479ed5bda7ba321a3d11efd8d940dd4f ""
+  "../pyproject.toml" 1734204228.00636 906 74bc72322f539ea895c430c437630964 ""
   "/etc/texmf/web2c/texmf.cnf" 1731690417.5266 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/ljf1/dis/dual_autodiff/report/main.tex" 1734097471.68296 11353 b1f6f27c9f699d370cc3e1cf28a3d5a5 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -220,8 +220,8 @@
   "_minted-main/E27E8FF77A14B133DFC63B60437D5728541C68F80C6A6F06151AFD63BAE50EBC.pygtex" 1733928736.97432 1135 8571e2905f656fe21f8300f399a13434 ""
   "_minted-main/default.pygstyle" 1734096830.56711 6428 74aba51736a5bc6590f8f7dd413c6f27 ""
   "jupynotex.sty" 1731871061.43784 388 6be853b1528fd840c2001a0c37f671d4 ""
-  "main.aux" 1734104995.00647 3677 37f5e5775210534bd2e41824dea20eff "pdflatex"
-  "main.out" 1734104995.00647 2145 8a335d7d7865432790475849abc7fb00 "pdflatex"
+  "main.aux" 1734354135.27416 3677 3a57c2483c555e2cb3ff1eeaf69469d4 "pdflatex"
+  "main.out" 1734354135.27416 2145 8a335d7d7865432790475849abc7fb00 "pdflatex"
   "main.tex" 1734097471.68296 11353 b1f6f27c9f699d370cc3e1cf28a3d5a5 ""
   (generated)
   "main.aux"

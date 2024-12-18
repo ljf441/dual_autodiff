@@ -12,6 +12,8 @@ COPY requirements.txt /app/
 
 COPY dual_autodiff.ipynb /app/
 
+COPY tests/* /app/tests
+
 RUN pip install --upgrade pip setuptools wheel setuptools_scm build numpy Cython
 
 RUN pip install -r requirements.txt
@@ -21,8 +23,6 @@ RUN pip install jupyter notebook
 RUN pip install mpmath
 
 RUN find /app/wheelhouse/ -name "*.whl" ! -name "*cp311*" -exec pip install {} \;
-
-# RUN pip install /app/wheelhouse/*.whl
 
 EXPOSE 8888
 
