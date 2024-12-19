@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.11.15)  19 DEC 2024 07:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.11.15)  19 DEC 2024 07:57
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1509,7 +1509,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has
                                                   \__shipout_drop_firstpage_...
 l.274 \begin{landscape}
                        ]
-<../percentage_difference.png, id=176, 1084.05pt x 433.62pt>
+<../percentage_difference.png, id=180, 1084.05pt x 433.62pt>
 File: ../percentage_difference.png Graphic file (type png)
 <use ../percentage_difference.png>
 Package pdftex.def Info: ../percentage_difference.png  used on input line 277.
@@ -1594,17 +1594,17 @@ LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <14.4> not available
 
 
 ] (../dual_autodiff_x/setup.py [13])
-<../memory.png, id=228, 722.7pt x 1011.78pt>
+<../memory.png, id=232, 722.7pt x 1011.78pt>
 File: ../memory.png Graphic file (type png)
 <use ../memory.png>
 Package pdftex.def Info: ../memory.png  used on input line 331.
 (pdftex.def)             Requested size: 398.4237pt x 557.793pt.
-<../time.png, id=229, 722.7pt x 1084.05pt>
+<../time.png, id=233, 722.7pt x 1084.05pt>
 File: ../time.png Graphic file (type png)
 <use ../time.png>
 Package pdftex.def Info: ../time.png  used on input line 338.
 (pdftex.def)             Requested size: 398.4237pt x 597.63536pt.
-<../speedup.png, id=230, 1084.05pt x 578.16pt>
+<../speedup.png, id=234, 1084.05pt x 578.16pt>
 File: ../speedup.png Graphic file (type png)
 <use ../speedup.png>
 Package pdftex.def Info: ../speedup.png  used on input line 345.
@@ -1647,15 +1647,15 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: A8FC0D8F3BDE5F3BF13046BF5EC913C1;2670.
+(rerunfilecheck)             Checksum: F21597F27FDEE1B19A8ACAF9EACF1929;2760.
 runsystem(rm report.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 27919 strings out of 474222
- 524513 string characters out of 5748732
+ 27925 strings out of 474222
+ 524600 string characters out of 5748732
  2024975 words of memory out of 5000000
- 49324 multiletter control sequences out of 15000+600000
+ 49328 multiletter control sequences out of 15000+600000
  607344 words of font info for 204 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  98i,10n,107p,1003b,2112s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1670,10 +1670,10 @@ type1/public/cm-super/sftt1440.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
 rw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on report.pdf (19 pages, 802916 bytes).
+Output written on report.pdf (19 pages, 803625 bytes).
 PDF statistics:
- 368 PDF objects out of 1000 (max. 8388607)
- 307 compressed objects within 4 object streams
- 107 named destinations out of 1000 (max. 500000)
- 54977 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 377 PDF objects out of 1000 (max. 8388607)
+ 316 compressed objects within 4 object streams
+ 109 named destinations out of 1000 (max. 500000)
+ 54985 words of extra memory for PDF output out of 61914 (max. 10000000)
 

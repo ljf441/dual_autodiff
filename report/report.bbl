@@ -38,4 +38,8 @@ Behnel S, Bradshaw R, Citro C, Dalcin L, Seljebotn DS, Smith K.
 Rickerby J, Jadoul Y, Darbois M, Schreiner H, Grzegorz B. cibuildwheel; 2017.
 \newblock Available from: \url{https://github.com/pypa/cibuildwheel}.
 
+\bibitem{jupynotex}
+jupynotex;.
+\newblock Available from: \url{https://github.com/facundobatista/jupynotex}.
+
 \end{thebibliography}

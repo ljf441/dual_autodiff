@@ -14,45 +14,49 @@ Warning--missing publisher in numericaldiff
 Warning--there's a month but no year in numericaldiff
 Warning--empty author and editor in cibuildwheel
 Warning--missing publisher in cibuildwheel
-You've used 7 entries,
+Warning--empty author in jupynotex
+Warning--empty author and editor in jupynotex
+Warning--missing publisher in jupynotex
+Warning--there's a month but no year in jupynotex
+You've used 8 entries,
             3507 wiz_defined-function locations,
-            730 strings with 6057 characters,
-and the built_in function-call counts, 11109 in all, are:
-= -- 1327
-> -- 100
+            732 strings with 6109 characters,
+and the built_in function-call counts, 11353 in all, are:
+= -- 1347
+> -- 101
 < -- 32
-+ -- 48
++ -- 49
 - -- 23
-* -- 865
-:= -- 1205
-add.period$ -- 23
-call.type$ -- 7
+* -- 880
+:= -- 1230
+add.period$ -- 25
+call.type$ -- 8
 change.case$ -- 3
 chr.to.int$ -- 72
-cite$ -- 14
-duplicate$ -- 1000
-empty$ -- 1071
+cite$ -- 19
+duplicate$ -- 1019
+empty$ -- 1101
 format.name$ -- 24
-if$ -- 2620
+if$ -- 2680
 int.to.chr$ -- 0
-int.to.str$ -- 7
-missing$ -- 64
-newline$ -- 36
+int.to.str$ -- 8
+missing$ -- 69
+newline$ -- 40
 num.names$ -- 7
-pop$ -- 177
+pop$ -- 192
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 134
+skip$ -- 153
 stack$ -- 0
 substring$ -- 1945
-swap$ -- 144
+swap$ -- 152
 text.length$ -- 14
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 7
+warning$ -- 11
 while$ -- 57
-width$ -- 8
-write$ -- 74
-(There were 7 warnings)
+width$ -- 9
+write$ -- 82
+(There were 11 warnings)

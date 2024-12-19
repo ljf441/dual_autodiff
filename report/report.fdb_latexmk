@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex report"] 1734564164.49429 "report.aux" "report.bbl" "report" 1734566028.08808 0
-  "./bibliography.bib" 1734549490.5611 2126 cfd58ef4ce342a81890d4d0272567b33 ""
+["bibtex report"] 1734566222.62001 "report.aux" "report.bbl" "report" 1734566222.8282 2
+  "./bibliography.bib" 1734566193.97423 2213 433df95e911b00bcef97682aa7ebf302 ""
   "./vancouver.bst" 1734547427.73319 40624 ac6ae80a2b874e3abad2798e8fbde6a2 ""
-  "report.aux" 1734566027.73011 6315 874d649bc819974ff58731802b6f8dec "pdflatex"
+  "report.aux" 1734566222.60633 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
   (generated)
   "report.bbl"
   "report.blg"
   (rewritten before read)
-["pdflatex"] 1734566024.53944 "/home/ljf1/dis/dual_autodiff/report/report.tex" "report.pdf" "report" 1734566028.08831 0
+["pdflatex"] 1734566218.68616 "/home/ljf1/dis/dual_autodiff/report/report.tex" "report.pdf" "report" 1734566222.40858 0
   "../dual_autodiff/dual.py" 1734565738.24647 29885 ec93ade7f116a59d50da602feeac208c ""
   "../dual_autodiff_x/setup.py" 1734093313.0327 751 41e5a89aeefb4324645c7e204d88da93 ""
   "../memory.png" 1734535336.49127 237773 d8595d1493e64933a765aafc050be5a6 ""
@@ -15,7 +15,7 @@
   "../speedup.png" 1734187552.21387 28618 587a6ba343f298959aa643d9c4c3a421 ""
   "../time.png" 1734536275.50772 302201 7dad19d5c0e3a2fe08ff23f8844897a3 ""
   "/etc/texmf/web2c/texmf.cnf" 1731690417.5266 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/ljf1/dis/dual_autodiff/report/report.tex" 1734566020.5042 19332 fb4bbf43b1a2bf8ddb215078b9a91472 ""
+  "/home/ljf1/dis/dual_autodiff/report/report.tex" 1734566208.5331 19431 d4bbf0f75bc3ee4fbeb147d203d0e871 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
@@ -243,10 +243,10 @@
   "_minted-report/FDA1AD62ABF077A33796DD363C628A51F73D778D6577DD371281B40198477396.pygtex" 1734543452.61786 1191 4c31d0f86fb8977a75c471d1329aa15e ""
   "_minted-report/default.pygstyle" 1734532450.00402 6428 74aba51736a5bc6590f8f7dd413c6f27 ""
   "jupynotex.sty" 1731871061.43784 388 6be853b1528fd840c2001a0c37f671d4 ""
-  "report.aux" 1734566027.73011 6315 874d649bc819974ff58731802b6f8dec "pdflatex"
-  "report.bbl" 1734566025.12806 1515 34677f9a6365403da1280b94c245cecb "bibtex report"
-  "report.out" 1734566027.66977 2670 a8fc0d8f3bde5f3bf13046bf5ec913c1 "pdflatex"
-  "report.tex" 1734566020.5042 19332 fb4bbf43b1a2bf8ddb215078b9a91472 ""
+  "report.aux" 1734566222.60633 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "report.bbl" 1734566222.82409 0 d41d8cd98f00b204e9800998ecf8427e "bibtex report"
+  "report.out" 0 -1 0 "pdflatex"
+  "report.tex" 1734566208.5331 19431 d4bbf0f75bc3ee4fbeb147d203d0e871 ""
   (generated)
   "report.aux"
   "report.log"
