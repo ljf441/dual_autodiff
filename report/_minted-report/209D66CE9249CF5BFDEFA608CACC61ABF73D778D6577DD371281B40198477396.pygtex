@@ -1,0 +1,16 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} trigonometric operations as well as the natural logarithm and exponential}
+\PYG{c+c1}{\PYGZsh{} additionally, some inverse trigonometric, hyperbolic, and inverse hyperbolic functions}
+
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}sin(x) = }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{x}\PYG{o}{.}\PYG{n}{sin}\PYG{p}{()}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}cos(x) = }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{x}\PYG{o}{.}\PYG{n}{cos}\PYG{p}{()}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}tan(x) = }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{x}\PYG{o}{.}\PYG{n}{tan}\PYG{p}{()}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}log(x) = }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{x}\PYG{o}{.}\PYG{n}{log}\PYG{p}{()}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}exp(x) = }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{x}\PYG{o}{.}\PYG{n}{exp}\PYG{p}{()}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}cosh(z) = }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{z}\PYG{o}{.}\PYG{n}{cosh}\PYG{p}{()}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}arccosh(z) = }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{z}\PYG{o}{.}\PYG{n}{arccosh}\PYG{p}{()}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}sec(z) = }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{z}\PYG{o}{.}\PYG{n}{sec}\PYG{p}{()}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}sech(z) = }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{z}\PYG{o}{.}\PYG{n}{sech}\PYG{p}{()}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}arcsech(z) = }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{z}\PYG{o}{.}\PYG{n}{arcsech}\PYG{p}{()}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\end{Verbatim}

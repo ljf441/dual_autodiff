@@ -1,2 +1,10 @@
 gitlab
 gitlab.pub
+setup_src.py
+dual_autodiff.egg-info/*
+dual_autodiff-0.0.1.dist-info/*
+dual_autodiff_x/dual_autodiff_x.egg-info/*
+.pytest_cache/*
+.tox/*
+build/*
+_minted-main/*

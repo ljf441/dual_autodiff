@@ -83,6 +83,12 @@ def test_dual_div():
     assert z.real == 2
     assert z.dual == 0
 
+def test_dual_div_zero():
+    x = Dual(6, 2)
+    y = Dual(0, 1)
+
+    with pytest.raises(ZeroDivisionError, match="Denominator is zero"): x/y
+
 def test_real_div():
     x = Dual(6, 2)
     y = x / 2
@@ -90,9 +96,45 @@ def test_real_div():
     assert y.real == 3
     assert y.dual == 1
 
+def test_real_div_zero():
+    x = Dual(6, 2)
+    with pytest.raises(ZeroDivisionError, match="Denominator is zero"): x/0
+
 def test_rdiv():
     x = Dual(3, 2)
     y = 6 / x
+
+    assert y.real == 2
+    assert np.isclose(y.dual, -(6*2) / (3**2))
+
+def test_dual_floordiv():
+    x = Dual(6, 2)
+    y = Dual(3, 1)
+    z = x // y
+
+    assert z.real == 2
+    assert z.dual == 0
+
+def test_dual_floordiv_zero():
+    x = Dual(6, 2)
+    y = Dual(0, 1)
+
+    with pytest.raises(ZeroDivisionError, match="Denominator is zero"): x//y
+
+def test_real_floordiv():
+    x = Dual(6, 2)
+    y = x // 2
+
+    assert y.real == 3
+    assert y.dual == 1
+
+def test_real_div_zero():
+    x = Dual(6, 2)
+    with pytest.raises(ZeroDivisionError, match="Denominator is zero"): x//0
+
+def test_rfloordiv():
+    x = Dual(3, 2)
+    y = 6 // x
 
     assert y.real == 2
     assert np.isclose(y.dual, -(6*2) / (3**2))

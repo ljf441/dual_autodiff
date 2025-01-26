@@ -8,7 +8,7 @@ skip = ["cp310-musllinux*", "cp311-musllinux*", "pp*", "cp312-musllinux*", "cp31
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["dual_autodiff_x", "dual_autodiff_x.*"]
+include = ["src", "dual_autodiff_x", "dual_autodiff_x.*"]
 
 [project]
 name = "dual_autodiff_x"

@@ -1,0 +1,62 @@
+This is BibTeX, Version 0.99d (TeX Live 2023/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: report.aux
+The style file: vancouver.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=200001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Database file #1: bibliography.bib
+Warning--empty author and editor in pytestx.y
+Warning--missing publisher in pytestx.y
+Warning--empty author and editor in numericaldiff
+Warning--missing publisher in numericaldiff
+Warning--there's a month but no year in numericaldiff
+Warning--empty author and editor in cibuildwheel
+Warning--missing publisher in cibuildwheel
+Warning--empty author in jupynotex
+Warning--empty author and editor in jupynotex
+Warning--missing publisher in jupynotex
+Warning--there's a month but no year in jupynotex
+You've used 8 entries,
+            3507 wiz_defined-function locations,
+            732 strings with 6109 characters,
+and the built_in function-call counts, 11353 in all, are:
+= -- 1347
+> -- 101
+< -- 32
++ -- 49
+- -- 23
+* -- 880
+:= -- 1230
+add.period$ -- 25
+call.type$ -- 8
+change.case$ -- 3
+chr.to.int$ -- 72
+cite$ -- 19
+duplicate$ -- 1019
+empty$ -- 1101
+format.name$ -- 24
+if$ -- 2680
+int.to.chr$ -- 0
+int.to.str$ -- 8
+missing$ -- 69
+newline$ -- 40
+num.names$ -- 7
+pop$ -- 192
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 153
+stack$ -- 0
+substring$ -- 1945
+swap$ -- 152
+text.length$ -- 14
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 11
+while$ -- 57
+width$ -- 9
+write$ -- 82
+(There were 11 warnings)
